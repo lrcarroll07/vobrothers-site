@@ -1,0 +1,196 @@
+{
+ "services": {
+  "process-water": {
+   "title": "Process Water",
+   "file": "services/process-water.jpg"
+  },
+  "water-softeners": {
+   "title": "Water Softeners",
+   "file": "services/water-softeners.jpg"
+  },
+  "pump-rooms": {
+   "title": "Pump Rooms",
+   "file": "services/pump-rooms.jpg"
+  },
+  "reverse-osmosis": {
+   "title": "Reverse Osmosis",
+   "file": "services/reverse-osmosis.jpg"
+  },
+  "steam-boilers": {
+   "title": "Steam Boilers",
+   "file": "services/steam-boilers.jpg"
+  },
+  "acid-waste": {
+   "title": "Acid Waste",
+   "file": "services/acid-waste.jpg"
+  },
+  "pure-systems": {
+   "title": "Pure Systems",
+   "file": "services/pure-systems.jpg"
+  },
+  "chemical-storage": {
+   "title": "Chemical Storage",
+   "file": "services/chemical-storage.jpg"
+  },
+  "water-distribution": {
+   "title": "Water Distribution",
+   "file": "services/water-distribution.jpg"
+  },
+  "clean-steam": {
+   "title": "Clean Steam",
+   "file": "services/clean-steam.jpg"
+  },
+  "orbital-welding": {
+   "title": "Orbital Welding",
+   "file": "services/orbital-welding.jpg"
+  },
+  "temperature-control": {
+   "title": "Temperature Control",
+   "file": "services/temperature-control.jpg"
+  },
+  "process-control": {
+   "title": "Process Control",
+   "file": "services/process-control.jpg"
+  },
+  "flash-separation": {
+   "title": "Flash Separation",
+   "file": "services/flash-separation.jpg"
+  },
+  "medical-gas": {
+   "title": "Medical Gas",
+   "file": "services/medical-gas.jpg"
+  },
+  "cooling-towers": {
+   "title": "Cooling Towers",
+   "file": "services/cooling-towers.jpg"
+  },
+  "hydronic-systems": {
+   "title": "Hydronic Systems",
+   "file": "services/hydronic-systems.jpg"
+  },
+  "custom-sumps": {
+   "title": "Custom Sumps",
+   "file": "services/custom-sumps.jpg"
+  },
+  "condensate-transfer": {
+   "title": "Condensate Transfer",
+   "file": "services/condensate-transfer.jpg"
+  },
+  "medical-equipment": {
+   "title": "Medical Equipment",
+   "file": "services/medical-equipment.jpg"
+  },
+  "deionization": {
+   "title": "Deionization",
+   "file": "services/deionization.jpg"
+  },
+  "frost-heave-protection": {
+   "title": "Frost Heave Protection",
+   "file": "services/frost-heave-protection.jpg"
+  },
+  "plumbing-services": {
+   "title": "Plumbing Services",
+   "file": "services/plumbing-services.jpg"
+  },
+  "specialty-welding": {
+   "title": "Specialty Welding",
+   "file": "services/specialty-welding.jpg"
+  }
+ },
+ "projects": {
+  "usu-childhood-education-and-research": {
+   "title": "USU Childhood Education and Research",
+   "file": "projects/usu-childhood-education-and-research.jpg"
+  },
+  "rio-tinto-kennecott-building": {
+   "title": "Rio Tinto Kennecott Building",
+   "file": "projects/rio-tinto-kennecott-building.jpg"
+  },
+  "fresenius-medical": {
+   "title": "Fresenius Medical",
+   "file": "projects/fresenius-medical.jpg"
+  },
+  "university-of-utah-guest-house": {
+   "title": "University of Utah Guest House",
+   "file": "projects/university-of-utah-guest-house.jpg"
+  },
+  "ogden-irs-building": {
+   "title": "Ogden IRS Building",
+   "file": "projects/ogden-irs-building.jpg"
+  },
+  "505-wakara-way": {
+   "title": "505 Wakara Way",
+   "file": "projects/505-wakara-way.jpg"
+  },
+  "george-e-wahlen-ogden-veterans-home": {
+   "title": "George E. Wahlen Ogden Veterans Home",
+   "file": "projects/george-e-wahlen-ogden-veterans-home.jpg"
+  },
+  "xactware": {
+   "title": "Xactware",
+   "file": "projects/xactware.jpg"
+  },
+  "logan-regional-budge-clinic": {
+   "title": "Logan Regional Budge Clinic",
+   "file": "projects/logan-regional-budge-clinic.jpg"
+  },
+  "weber-state-chiller-plant": {
+   "title": "Weber State Chiller Plant",
+   "file": "projects/weber-state-chiller-plant.jpg"
+  },
+  "janicki": {
+   "title": "Janicki",
+   "file": "projects/janicki.jpg"
+  },
+  "usu-thermal-energy-storage-tank": {
+   "title": "USU Thermal Energy Storage Tank",
+   "file": "projects/usu-thermal-energy-storage-tank.jpg"
+  },
+  "us-ski-and-snow-board-association": {
+   "title": "US Ski and Snow Board Association",
+   "file": "projects/us-ski-and-snow-board-association.jpg"
+  },
+  "usu-college-of-ag-tunnel": {
+   "title": "USU College of Ag Tunnel",
+   "file": "projects/usu-college-of-ag-tunnel.jpg"
+  },
+  "wsu-elizabeth-hall": {
+   "title": "WSU Elizabeth Hall",
+   "file": "projects/wsu-elizabeth-hall.jpg"
+  },
+  "usu-maverick-stadium": {
+   "title": "USU Maverick Stadium",
+   "file": "projects/usu-maverick-stadium.jpg"
+  },
+  "usu-caine-performance-hall": {
+   "title": "USU Caine Performance Hall",
+   "file": "projects/usu-caine-performance-hall.jpg"
+  },
+  "elkay-manufacturing": {
+   "title": "Elkay Manufacturing",
+   "file": "projects/elkay-manufacturing.jpg"
+  }
+ },
+ "site": {
+  "home-hero": {
+   "title": "home hero",
+   "file": "site/home-hero.jpg"
+  },
+  "home-2": {
+   "title": "home 2",
+   "file": "site/home-2.jpg"
+  },
+  "about": {
+   "title": "about",
+   "file": "site/about.jpg"
+  },
+  "logo-quantum": {
+   "title": "logo",
+   "file": "site/logo-quantum.png"
+  },
+  "tagline-badge": {
+   "title": "tagline",
+   "file": "site/tagline-badge.png"
+  }
+ }
+}
