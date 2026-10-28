@@ -49,7 +49,7 @@ Utah-specific award there, ABC Utah Sub-Contractor of the Year 2020, is used. St
 5. Confirm the **24/7 emergency number**. It's currently the main line, 866-722-1267.
 6. Confirm project locations marked only "Utah" (Xactware, Fresenius, Elkay, US Ski & Snowboard) so they can go on the map, and the full scope for the U of U Guest House.
 7. Map pins use approximate campus/street coordinates (edit Latitude/Longitude on each project).
-8. Project photos for the placeholders: Provo Wastewater, Davis Aqueduct Reach 1, Davis Tech Allied Health, Brigham City Community Hospital, FAA SLC ARTCC, USU Life Sciences and Thermo Fisher. Also Thermo Fisher's city (for the map), and whether to keep the 2025 UC&D Provo Wastewater award (from Quantum's newsletter, not on VO's awards list).
+8. Project photos for the placeholders: Provo Wastewater, Davis Aqueduct Reach 1, Davis Tech Allied Health, Brigham City Community Hospital, FAA SLC ARTCC, USU Life Sciences and Thermo Fisher. Also Thermo Fisher's city (for the map).
 9. Second location (1572 S. 1100 W.) is assumed to be Ogden, UT 84404 and labeled "Service location"; edit under Settings → VO Brothers.
 
 ## Project map

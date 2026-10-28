@@ -141,10 +141,10 @@ return array(
 
 	// ------------------------------------------------------------------
 	// Awards: name, project / category, issuing authority, year, kind (safety | project).
-	// VO Brothers' awards lists, plus the 2025 Provo award from Quantum's Utah newsletter.
+	// VO Brothers' master awards list (23).
 	// ------------------------------------------------------------------
 	'awards' => array(
-		array( 'Most Outstanding Specialty Contracting Project', 'Provo Wastewater Reclamation Facility', 'Utah Construction & Design (UC&D)', '2025', 'project' ),
+		array( 'Most Outstanding Specialty Contracting – Electrical', 'Key Subcontractor on Provo Wastewater Reclamation Facility', 'Utah Construction & Design (UC&D)', '2025', 'project' ),
 		array( '2025 Most Outstanding Project Award', 'Davis Aqueduct Reach 1 Parallel Pipeline Project · Most Outstanding Water Project', 'Utah Construction & Design (UC&D)', '2025', 'project' ),
 		array( 'Excellence in Construction Award', 'Schreiber Foods · Mechanical', 'Utah Construction & Design (UC&D)', '2025', 'project' ),
 		array( 'Pulse Award for Excellence', '', 'Pulse of the City News', '2024', 'project' ),
@@ -186,9 +186,9 @@ return array(
 			'sectors'  => array( 'Water & Wastewater' ),
 			'location' => 'Provo',
 			'label'    => 'Provo, Utah',
-			'award'    => 'Most Outstanding Specialty Contracting Project, Utah Construction & Design 2025',
-			'content'  => 'Named the Most Outstanding Specialty Contracting Project of 2025 by Utah Construction + Design, with VO Brothers as the plumbing contractor.',
-			'scope'    => 'Plumbing contractor.',
+			'award'    => 'Most Outstanding Specialty Contracting – Electrical, Utah Construction & Design 2025',
+			'content'  => 'Named Most Outstanding Specialty Contracting – Electrical of 2025 by Utah Construction & Design, with VO Brothers as a key subcontractor.',
+			'scope'    => 'Key subcontractor; plumbing.',
 		),
 		array(
 			'title'    => 'Davis Aqueduct Reach 1 Parallel Pipeline',
