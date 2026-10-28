@@ -214,8 +214,8 @@ add_action(
 		}
 		$current = vob_palette();
 		$options = array(
-			'vo'      => 'VO red',
-			'family'  => 'VO + Quantum blue',
+			'vo'      => 'Original VO',
+			'family'  => 'Slightly Quantum',
 			'quantum' => 'Full Quantum',
 		);
 		echo '<nav class="palette-switch" aria-label="Preview color scheme"><span>Colors</span>';
