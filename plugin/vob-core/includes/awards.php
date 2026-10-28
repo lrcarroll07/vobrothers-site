@@ -92,7 +92,7 @@ add_shortcode(
 		$years  = array_filter( array_map( 'intval', array_column( $all, 'year' ) ) );
 		$safety = count( array_filter( $all, fn( $a ) => 'safety' === $a['kind'] ) );
 		return sprintf(
-			'<div class="award-stats"><div><strong>%d</strong><span>Industry awards since %d</span></div><div><strong>%d</strong><span>Safety awards from ABC and the Utah Labor Commission</span></div><div><strong>%d</strong><span>Project awards for construction excellence</span></div></div>',
+			'<div class="award-stats"><div><strong>%d</strong><span>Industry awards since %d</span></div><div><strong>%d</strong><span>Safety awards from ABC, the Utah Labor Commission and ENR Mountain States</span></div><div><strong>%d</strong><span>Excellence and project awards</span></div></div>',
 			count( $all ),
 			$years ? min( $years ) : (int) wp_date( 'Y' ),
 			$safety,

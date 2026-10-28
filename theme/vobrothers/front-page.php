@@ -193,8 +193,8 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 		?>
 		<div class="recognition">
 			<div class="recognition__item recognition__item--stat"><strong><?php echo count( $all_awards ); ?></strong><span>Industry awards since <?php echo esc_html( $years ? min( $years ) : '' ); ?></span></div>
-			<div class="recognition__item recognition__item--stat"><strong><?php echo count( $safety ); ?></strong><span>Safety awards from ABC and the Utah Labor Commission, including ABC STEP Diamond</span></div>
-			<div class="recognition__item recognition__item--stat"><strong><?php echo count( $all_awards ) - count( $safety ); ?></strong><span>Project awards, including two &ldquo;Most Outstanding Projects&rdquo; of 2025</span></div>
+			<div class="recognition__item recognition__item--stat"><strong><?php echo count( $safety ); ?></strong><span>Safety awards from ABC, the Utah Labor Commission and ENR Mountain States</span></div>
+			<div class="recognition__item recognition__item--stat"><strong><?php echo count( $all_awards ) - count( $safety ); ?></strong><span>Excellence and project awards, including three from Utah Construction &amp; Design in 2025</span></div>
 		</div>
 		<?php if ( $all_awards ) : ?>
 			<ul class="award-list award-list--home">

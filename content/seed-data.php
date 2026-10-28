@@ -141,12 +141,14 @@ return array(
 
 	// ------------------------------------------------------------------
 	// Awards: name, project / category, issuing authority, year, kind (safety | project).
-	// The 18 from VO Brothers' awards list plus the two 2025 UC+D awards from
-	// Quantum's Utah newsletter.
+	// VO Brothers' awards lists, plus the 2025 Provo award from Quantum's Utah newsletter.
 	// ------------------------------------------------------------------
 	'awards' => array(
-		array( 'Most Outstanding Specialty Contracting Project', 'Provo Wastewater Reclamation Facility', 'Utah Construction + Design', '2025', 'project' ),
-		array( 'Most Outstanding Water Project', 'Davis Aqueduct Reach 1 Parallel Pipeline', 'Utah Construction + Design', '2025', 'project' ),
+		array( 'Most Outstanding Specialty Contracting Project', 'Provo Wastewater Reclamation Facility', 'Utah Construction & Design (UC&D)', '2025', 'project' ),
+		array( '2025 Most Outstanding Project Award', 'Davis Aqueduct Reach 1 Parallel Pipeline Project · Most Outstanding Water Project', 'Utah Construction & Design (UC&D)', '2025', 'project' ),
+		array( 'Excellence in Construction Award', 'Schreiber Foods · Mechanical', 'Utah Construction & Design (UC&D)', '2025', 'project' ),
+		array( 'Pulse Award for Excellence', '', 'Pulse of the City News', '2024', 'project' ),
+		array( 'Excellence in Safety: Best Project', 'Key Subcontractor on Primary Children\'s Hospital Surgical Expansion', 'ENR Mountain States', '2018', 'safety' ),
 		array( 'STEP Award – Platinum Level', '', 'Associated Builders and Contractors (ABC)', '2026', 'safety' ),
 		array( 'Annual Workplace Safety Award', '', 'Utah Labor Commission & ABC', '2026', 'safety' ),
 		array( 'Annual Workplace Safety Award', '', 'Utah Labor Commission & ABC', '2025', 'safety' ),
@@ -184,7 +186,7 @@ return array(
 			'sectors'  => array( 'Water & Wastewater' ),
 			'location' => 'Provo',
 			'label'    => 'Provo, Utah',
-			'award'    => 'Most Outstanding Specialty Contracting Project, Utah Construction + Design 2025',
+			'award'    => 'Most Outstanding Specialty Contracting Project, Utah Construction & Design 2025',
 			'content'  => 'Named the Most Outstanding Specialty Contracting Project of 2025 by Utah Construction + Design, with VO Brothers as the plumbing contractor.',
 			'scope'    => 'Plumbing contractor.',
 		),
@@ -197,7 +199,7 @@ return array(
 			'sectors'  => array( 'Water & Wastewater' ),
 			'location' => 'Davis County',
 			'label'    => 'Davis County, Utah',
-			'award'    => 'Most Outstanding Water Project, Utah Construction + Design 2025',
+			'award'    => '2025 Most Outstanding Project Award (Water), Utah Construction & Design',
 			'content'  => 'Named the Most Outstanding Water Project of 2025 by Utah Construction + Design, with VO Brothers as the plumbing contractor.',
 			'scope'    => 'Plumbing contractor.',
 		),
@@ -212,6 +214,7 @@ return array(
 			'sectors'  => array( 'Water & Wastewater', 'Manufacturing & Industrial' ),
 			'size'     => '80% prefabricated',
 			'client'   => 'Schreiber Foods',
+			'award'    => 'Excellence in Construction Award (Mechanical), Utah Construction & Design 2025',
 			'content'  => 'As a food manufacturer, Schreiber must treat its discarded water mixture to meet city codes before it can flow into other waste lines. VO Brothers built a system that meets those requirements through chemical and aeration separation treatment, so the discarded water flows into city lines without issue. Design to completion took one year, wrapping up in January 2026.',
 			'scope'    => 'Jason Wilson and his team used BIM, based on JUB Engineering\'s Navisworks model, to create prefabrication drawings. 80% of the work was prefabricated in our Ogden shop, in stainless steel from 16″ down to ½″ and every size in between.',
 		),
