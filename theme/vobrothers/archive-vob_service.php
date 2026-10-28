@@ -9,7 +9,7 @@ vob_page_hero(
 	array(
 		'title'   => 'Services',
 		'eyebrow' => 'What we do //',
-		'intro'   => 'Mechanical, process piping, plumbing, service and maintenance for facilities across Utah. We understand facility operational needs and plan extensively up front so time-sensitive projects are executed successfully.',
+		'intro'   => 'Mechanical, process piping, plumbing, service and maintenance for facilities across Utah. We know how your facility operates, and we plan every detail up front so time-sensitive projects run smoothly.',
 	)
 );
 ?>

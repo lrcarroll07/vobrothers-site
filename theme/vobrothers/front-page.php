@@ -44,7 +44,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 	<div class="container proof__grid">
 		<div class="proof__item"><strong>4,900<small> tons</small></strong><span>Central chiller plant at Weber State</span></div>
 		<div class="proof__item"><strong>2M<small> gallons</small></strong><span>Thermal energy storage tank at Utah State</span></div>
-		<div class="proof__item"><strong>24</strong><span>Specialty mechanical &amp; process services</span></div>
+		<div class="proof__item"><strong>3</strong><span>Utah industry awards, including two in 2025</span></div>
 		<div class="proof__item"><strong>24/7</strong><span>Emergency service &amp; maintenance plans</span></div>
 	</div>
 </section>
@@ -81,7 +81,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 		<div class="section-head">
 			<p class="eyebrow">What we do //</p>
 			<h2 class="section-title" id="services-title">Services</h2>
-			<p class="section-lead">Years of supporting a wide range of mechanical systems have taught us how facilities really operate. We plan carefully up front so time-sensitive projects go smoothly.</p>
+			<p class="section-lead">Years of work on every kind of mechanical system have taught us how facilities really operate. We plan every detail up front, so time-sensitive projects run smoothly.</p>
 		</div>
 		<div class="service-grid">
 			<?php foreach ( $groups as $group ) : ?>
@@ -137,7 +137,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 		<div class="split__body">
 			<p class="eyebrow">Service &amp; maintenance //</p>
 			<h2 class="section-title" id="service-title">Proactive, not reactive</h2>
-			<p>The systems we install are the systems we keep running. Our service team handles emergency repairs around the clock and builds preventative maintenance plans around your equipment, schedule and regulatory requirements.</p>
+			<p>We don't just install systems; we keep them running. Our service team handles emergency repairs around the clock and builds preventative maintenance plans around your equipment, schedule and regulatory requirements.</p>
 			<ul class="checklist">
 				<li><?php echo vob_icon( 'check', 'icon icon--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput ?> 24/7 emergency response</li>
 				<li><?php echo vob_icon( 'check', 'icon icon--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput ?> Custom preventative maintenance plans</li>
@@ -162,7 +162,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 		<div>
 			<p class="eyebrow eyebrow--light">Prefabrication //</p>
 			<h2 class="section-title" id="fab-title">Built in the shop, faster in the field</h2>
-			<p>As a <?php echo esc_html( vob_t_info( 'parent_name' ) ); ?> company, VO Brothers projects can draw on Quantum's 136,000 sq ft pipe fabrication facility and its robotic cutting and welding equipment. Spools built under controlled shop conditions mean safer job sites, consistent welds and shorter schedules.</p>
+			<p>As a <?php echo esc_html( vob_t_info( 'parent_name' ) ); ?> company, VO Brothers can draw on Quantum's 136,000 sq ft pipe fabrication facility and its robotic cutting and welding equipment. Spools built under controlled shop conditions mean safer job sites, consistent welds and shorter schedules.</p>
 			<ul class="tag-list">
 				<li><a href="<?php echo esc_url( $fab_page ? get_permalink( $fab_page ) : home_url( '/services/' ) ); ?>">HGG ProCutter 900 RB</a></li>
 				<li><a href="<?php echo esc_url( $fab_page ? get_permalink( $fab_page ) : home_url( '/services/' ) ); ?>">Novarc Spool Welding Robot</a></li>
@@ -219,7 +219,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 		<div>
 			<p class="eyebrow eyebrow--light">Careers //</p>
 			<h2 class="section-title" id="careers-title">Build your career with us</h2>
-			<p>Developing and empowering our workforce is our most important mission. Competitive wages, real benefits, apprenticeships and a team that feels like family. One word our people use for it: brotherhood.</p>
+			<p>Developing and empowering our people is our most important mission. You'll get competitive wages, real benefits and room to grow through apprenticeships and training, alongside a team our people sum up in one word: brotherhood.</p>
 			<a class="btn btn--primary" href="<?php echo esc_url( home_url( '/careers/' ) ); ?>">
 				<?php echo is_array( $jobs ) && $jobs ? esc_html( sprintf( 'See %d open position%s', count( $jobs ), 1 === count( $jobs ) ? '' : 's' ) ) : 'See open positions'; ?>
 			</a>

@@ -44,7 +44,7 @@ vob_page_hero(
 	array(
 		'title'   => is_tax() ? single_term_title( '', false ) . ' Projects' : 'Projects',
 		'eyebrow' => 'Experience //',
-		'intro'   => 'Outside of service, we have built a portfolio of projects all over the state of Utah. We are proud of our work, proud of our friendships and proud to be a preferred mechanical contractor.',
+		'intro'   => 'From central plants and research labs to hospitals, stadiums and manufacturing floors, our work is built into some of Utah\'s most demanding facilities. We\'re proud of every project, and proud to be a preferred mechanical contractor across the state.',
 	)
 );
 ?>

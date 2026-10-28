@@ -203,14 +203,14 @@ update_option( 'page_on_front', $home );
 
 // Team (leadership) and team testimonials, shared from Quantum Industrial's site.
 $team = array(
-	array( 'Josh VanOrden', 'Founder, VO Brothers Mechanical', 'team/josh-vanorden.jpg', 'utah' ),
+	array( 'Josh VanOrden', 'President', 'team/josh-vanorden.jpg', 'utah' ),
 	array( 'Jeff Warner', 'General Manager', 'team/jeff-warner.jpg', 'utah' ),
 	array( 'Jason Wilson', 'Construction Operations Manager', 'team/jason-wilson.jpg', 'utah' ),
 	array( 'Dan Fonoti', 'Preconstruction Manager', 'team/dan-fonoti.jpg', 'utah' ),
 	array( 'Courtney Cannon', 'Senior Project Manager', 'team/courtney-cannon.jpg', 'utah' ),
-	array( 'Jordan Abbott', 'VDC/BIM Manager', 'team/jordan-abbott.jpg', 'utah' ),
 	array( 'Dennis Valdez', 'Safety Manager', 'team/dennis-valdez.jpg', 'utah' ),
 	array( 'Melody Stong', 'Business Development', 'team/melody-stong.jpg', 'utah' ),
+	array( 'Jordan Abbott', 'VDC/BIM Manager', 'team/jordan-abbott.jpg', 'utah' ),
 	array( 'Mark Estep', 'CEO, Quantum Industrial', 'team/mark-estep.jpg', 'quantum' ),
 	array( 'Chris Potter', 'COO, Quantum Industrial', 'team/chris-potter.jpg', 'quantum' ),
 	array( 'Eric Voltin', 'VP of Operations, Quantum Industrial', 'team/eric-voltin.jpg', 'quantum' ),
@@ -262,30 +262,30 @@ $about_image = vob_seed_image( 'site/about.jpg', 'The VO Brothers Mechanical tea
 $about       = vob_seed_page(
 	'About VO Brothers',
 	'about',
-	'<p>Although we value performance, we also value our friendships. Life is about growing, learning and enjoying. Here we enjoy our team and value our culture and community, knowing that without the right mix of people, and a place to live and grow, we could never expect to perform as a high-quality company. With the right team, magic will happen.</p>
+	'<p>We hold ourselves to a high standard on every job, and we never forget who does the work: people. Our crews are close-knit. We learn from each other, push each other and genuinely enjoy what we do. Put the right people together, give them room to grow, and great work follows.</p>
 <h2>Our purpose</h2>
-<p>Our company is a community of friends, teammates and talented mechanics. We understand our place in the market and strive to create value for all our customers.</p>
-<p>Our company has been cultivated through years of supporting a wide range of mechanical systems. Our culture knows and understands facility operational needs, and has adapted to time-sensitive projects that require extensive upfront planning for successful execution.</p>
+<p>We\'re a team of skilled tradespeople, project managers and friends who take pride in building the systems facilities can\'t run without. We earn our customers\' trust one project at a time by planning carefully, communicating honestly and finishing what we start.</p>
+<p>Years of work on boilers, chillers, process piping, pure water and medical gas have taught us how facilities actually operate. Many of our customers can\'t simply shut down, so we plan every detail up front and deliver time-sensitive work with as little disruption as possible.</p>
 <figure class="wp-block-image">' . wp_get_attachment_image( $about_image, 'large' ) . '</figure>
 <h2>Our history</h2>
-<p>VO Brothers Mechanical was founded by Josh VanOrden and grew into a renowned mechanical and plumbing contractor in the Intermountain West, known for specialty process piping, pure water, steam and medical gas work on campuses, hospitals and manufacturing plants across the state.</p>
-<p>In early 2024, VO Brothers joined Quantum Industrial Services, an industrial mechanical and plumbing contractor serving clients across the United States. We still operate as VO Brothers Mechanical, with the same local team, from our shop in Ogden, now with Quantum\'s fabrication facility, training and resources behind us. <a href="' . esc_url( home_url( '/about/quantum-industrial/' ) ) . '">Learn more about Quantum Industrial</a>.</p>
+<p>VO Brothers Mechanical was founded by Chet &amp; Scott VanOrden before Chet\'s son, Josh, took over as President in 2011. Since then, the company has grown into a renowned mechanical and plumbing contractor in the Intermountain West, known for specialty process piping, pure water, steam and medical gas work on campuses, in hospitals and at manufacturing plants across Utah.</p>
+<p>In early 2024, VO Brothers joined Quantum Industrial Services, an industrial mechanical and plumbing contractor serving clients nationwide. The people you work with haven\'t changed: the same local team still runs VO Brothers from our shop in Ogden. What\'s new is what stands behind us, including Quantum\'s fabrication facility, training programs and resources. <a href="' . esc_url( home_url( '/about/quantum-industrial/' ) ) . '">Learn more about Quantum Industrial</a>.</p>
 ' . $abc_award . '
 <h2>Utah leadership</h2>
 [vob_team group="utah"]
 ' . vob_placeholder( 'add the founding year and any milestones you\'d like to highlight.' ),
-	array( 'post_excerpt' => 'A community of friends, teammates and talented mechanics, determined for progress.' )
+	array( 'post_excerpt' => 'A close-knit team of Utah tradespeople, building the systems facilities depend on.' )
 );
 
 vob_seed_page(
 	'Core Values',
 	'core-values',
-	'<p class="lead">At Quantum Industrial, we build people. Developing and empowering our workforce is our most important mission and critical to our ability to offer an innovative approach to industrial services and provide safe and quality craftsmanship down to the Quantum level. As a Quantum Industrial company, VO Brothers lives by the same four values.</p>
+	'<p class="lead">At Quantum Industrial, we build people. Developing and empowering our workforce is our most important mission, and it\'s how we deliver an innovative approach to industrial services with safe, quality craftsmanship down to the Quantum level. As a Quantum Industrial company, VO Brothers lives by the same four values.</p>
 <div class="value-grid">
 <div class="value-card"><h3>Integrity</h3><p>Integrity is central to how we interact with others and how we approach our work. We hold ourselves to the highest standard of safety, honesty and quality in every project and client interaction. We take pride in our work and never take shortcuts or settle for mediocrity.</p></div>
-<div class="value-card"><h3>Accountability</h3><p>We take full responsibility for our actions and results. We proactively look for and find solutions instead of just identifying problems. We see it, we own it.</p></div>
-<div class="value-card"><h3>Partnership</h3><p>We see our teammates and our clients as true partners and care about their success as much as our own. We strive to be the best partner our customers work with, delivering unparalleled safety, service and quality.</p></div>
-<div class="value-card"><h3>Innovation</h3><p>We proactively seek out and implement cutting-edge solutions to achieve better outcomes for our clients and improve safety, quality and efficiency for our team. We look for opportunities to challenge the status quo.</p></div>
+<div class="value-card"><h3>Accountability</h3><p>We take full responsibility for our actions and results. We don\'t just point out problems; we find solutions. We see it, we own it.</p></div>
+<div class="value-card"><h3>Partnership</h3><p>We see our teammates and clients as true partners and care about their success as much as our own. Our goal is to be the best partner our customers have, with unmatched safety, service and quality.</p></div>
+<div class="value-card"><h3>Innovation</h3><p>We seek out cutting-edge solutions that deliver better outcomes for our clients and make our work safer, better and more efficient. We look for every opportunity to challenge the status quo.</p></div>
 </div>',
 	array( 'post_parent' => $about, 'menu_order' => 1, 'post_excerpt' => 'We build people.' )
 );
@@ -293,14 +293,14 @@ vob_seed_page(
 vob_seed_page(
 	'Safety',
 	'safety',
-	'<p class="lead">Our commitment to zero incidents is reinforced through our culture and attitude towards safety. We pride ourselves on our unwavering focus to provide continuous safety instruction and certified training.</p>
-<p>We are proactive when it comes to ensuring the safety of our employees and the safety of others. We are dedicated to strict adherence to federal and state safety regulations and follow stringent safety protocols while maintaining quality and productivity. We are proud of our safety record and our unwavering commitment to a zero-injury workforce.</p>
+	'<p class="lead">Our goal is zero incidents, and our culture is built around reaching it: continuous safety instruction, certified training and a team that treats safety as everyone\'s job.</p>
+<p>We\'re proactive about protecting our employees and everyone around our work. We follow federal and state safety regulations to the letter and hold every site to stringent protocols, without sacrificing quality or productivity. We\'re proud of our safety record and our commitment to a zero-injury workforce.</p>
 <div class="value-grid">
-<div class="value-card"><h3>Planned for every site</h3><p>We evaluate each project\'s unique circumstances and safety protocols to properly prepare our team and keep everyone on or near the site as safe as possible.</p></div>
+<div class="value-card"><h3>Planned for every site</h3><p>We assess each project\'s unique conditions and protocols in advance, so our crews arrive prepared and everyone on or near the site stays safe.</p></div>
 <div class="value-card"><h3>Training that never stops</h3><p>Comprehensive safety protocols and continuous training make every job site a safe place to work, from apprentices to superintendents.</p></div>
 <div class="value-card"><h3>Everyone looks out</h3><p>We invest in the latest safety equipment and technologies, and cultivate a culture where everyone looks out for one another.</p></div>
 </div>
-<p>Safety is a significant part of our daily life. Our reputation relies heavily on our team and our conduct, from the office to the field and everything in between. By maintaining the highest level of safety, we achieve the best possible outcome for our team and our clients.</p>
+<p>Safety shapes everything we do, from the office to the field. Our reputation rests on how our people work, and keeping safety first produces the best outcome for our team and our clients.</p>
 <p>Our Utah safety program is led by <strong>Dennis Valdez, Safety Manager</strong>.</p>',
 	array( 'post_parent' => $about, 'menu_order' => 2, 'post_excerpt' => 'Committed to zero incidents and a zero-injury workforce.' )
 );
@@ -308,7 +308,7 @@ vob_seed_page(
 vob_seed_page(
 	'Testimonials',
 	'testimonials',
-	'<p>What general contractors, owners and facility managers say about working with VO Brothers Mechanical.</p>
+	'<p>Hear from the general contractors, owners and facility managers who work with VO Brothers Mechanical.</p>
 [vob_testimonials audience="client"]
 <h2>From our team</h2>
 [vob_testimonials audience="employee"]',
@@ -319,8 +319,8 @@ $quantum_page = vob_seed_page(
 	'Quantum Industrial',
 	'quantum-industrial',
 	'<p class="lead">VO Brothers Mechanical is a Quantum Industrial company. Quantum Industrial Services is a premier industrial mechanical and plumbing contractor serving clients across the United States. Its teams build and maintain some of the largest, most critical industrial projects in the country.</p>
-<p>With strong financial backing, Quantum provides a comprehensive range of services including heating and cooling systems, refrigeration, plumbing, process piping, pipe fabrication and specialty pipe welding. Its commitment to safety, quality and innovation sets it apart as an industry leader.</p>
-<p>In early 2024, Quantum expanded its capabilities by acquiring VO Brothers Mechanical, building on the strong foundation and legacy of our business to become a leading provider of plumbing, process piping, pipe fabrication and mechanical services in the Intermountain West. We operate as VO Brothers Mechanical, with the same local team, from our shop in Ogden.</p>
+<p>Backed by strong financial resources, Quantum offers heating and cooling systems, refrigeration, plumbing, process piping, pipe fabrication and specialty pipe welding, with a commitment to safety, quality and innovation that sets it apart as an industry leader.</p>
+<p>In early 2024, Quantum acquired VO Brothers Mechanical, building on our foundation and legacy to become a leading provider of plumbing, process piping, pipe fabrication and mechanical services in the Intermountain West. We still operate as VO Brothers Mechanical, with the same local team, from our shop in Ogden.</p>
 <h2>What it means for our customers</h2>
 <div class="value-grid">
 <div class="value-card"><h3>Fabrication capacity</h3><p>Access to Quantum\'s 136,000 sq ft pipe fabrication facility with robotic cutting and welding.</p></div>
@@ -336,11 +336,11 @@ $quantum_page = vob_seed_page(
 $careers = vob_seed_page(
 	'Careers',
 	'careers',
-	'<p class="lead">We believe that a strong company culture is the foundation of our success. We are committed to creating an environment where our people feel valued, respected and empowered to grow. Whether you\'re a seasoned journeyman, an estimator, a BIM modeler or just starting out, there\'s a place for you here.</p>
+	'<p class="lead">Great work starts with a great culture. We want every person here to feel valued, respected and empowered to grow, whether you\'re a seasoned journeyman, an estimator, a BIM modeler or brand new to the trades.</p>
 <div class="value-grid">
-<div class="value-card"><h3>Safety first</h3><p>The well-being of our team is paramount. Comprehensive safety protocols, continuous training and the latest equipment make every job site a safe place to work.</p></div>
+<div class="value-card"><h3>Safety first</h3><p>Your well-being comes first. Comprehensive safety protocols, continuous training and the latest equipment make every job site a safe place to work.</p></div>
 <div class="value-card"><h3>Respect &amp; support</h3><p>Our team is our family. Open communication and mutual respect are the cornerstones of our culture, whether you\'re a seasoned professional or just starting out.</p></div>
-<div class="value-card"><h3>Training &amp; development</h3><p>Extensive training programs and continuous learning, from apprenticeships to advanced certifications, give you the tools to excel and advance your career.</p></div>
+<div class="value-card"><h3>Training &amp; development</h3><p>From apprenticeships to advanced certifications, our training programs give you the skills to excel and the path to advance.</p></div>
 </div>
 <h2>Benefits</h2>
 <ul class="benefit-grid">
@@ -363,7 +363,7 @@ $contact = vob_seed_page(
 	'Contact Us',
 	'contact',
 	'',
-	array( 'post_excerpt' => 'Request a quote, set up a maintenance plan or reach our 24/7 emergency line.' )
+	array( 'post_excerpt' => 'Request a quote, set up a maintenance plan or ask about 24/7 emergency service.' )
 );
 
 // Menus ------------------------------------------------------------------------
