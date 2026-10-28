@@ -1,6 +1,7 @@
 </main>
 
 <footer class="site-footer">
+	<?php echo vob_honeycomb( 'right steel' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	<div class="container site-footer__grid">
 		<div class="site-footer__brand">
 			<img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/logo-lockup.png' ) ); ?>" width="569" height="200" alt="<?php echo esc_attr( vob_t_info( 'company_name' ) ); ?>, a <?php echo esc_attr( vob_t_info( 'parent_name' ) ); ?> company" loading="lazy">

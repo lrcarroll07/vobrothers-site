@@ -43,12 +43,14 @@
 	const layer = L.layerGroup().addTo( map );
 	let visible = projects;
 
+	// Hexagon pins, matching the hexagon motif used across the site.
+	const HEX = '<svg viewBox="0 0 100 115.47" aria-hidden="true"><polygon points="50,4 96,30.5 96,85 50,111.5 4,85 4,30.5" /></svg>';
 	const pin = ( count ) => L.divIcon( {
 		className: '',
-		html: count > 1 ? `<span class="map-pin map-pin--cluster">${ count }</span>` : '<span class="map-pin"></span>',
-		iconSize: count > 1 ? [ 40, 40 ] : [ 22, 22 ],
-		iconAnchor: count > 1 ? [ 20, 20 ] : [ 11, 11 ],
-		popupAnchor: [ 0, -12 ],
+		html: count > 1 ? `<span class="map-pin map-pin--cluster">${ HEX }<b>${ count }</b></span>` : `<span class="map-pin">${ HEX }</span>`,
+		iconSize: count > 1 ? [ 42, 48 ] : [ 24, 28 ],
+		iconAnchor: count > 1 ? [ 21, 24 ] : [ 12, 14 ],
+		popupAnchor: [ 0, -14 ],
 	} );
 
 	// Popup built from DOM nodes so project text is never parsed as HTML.
@@ -123,7 +125,10 @@
 		map.fitBounds( bounds.pad( 0.25 ), { maxZoom: 12, animate: true } );
 	};
 
+	// City labels crowd the pins at statewide zoom; show them once zoomed in.
+	const toggleLabels = () => el.classList.toggle( 'map--labels', map.getZoom() >= 9 );
 	map.on( 'zoomend', render );
+	map.on( 'zoomend', toggleLabels );
 
 	const update = ( { group, area } ) => {
 		visible = projects.filter( ( p ) => ( '*' === group || p.groups.includes( group ) ) && ( '*' === area || p.areas.includes( area ) ) );

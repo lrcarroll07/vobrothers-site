@@ -25,6 +25,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 		the_post_thumbnail( 'vob-hero', array( 'class' => 'hero__bg', 'alt' => '', 'fetchpriority' => 'high', 'loading' => 'eager' ) );
 	}
 	?>
+	<?php echo vob_honeycomb( 'bottom' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	<div class="container hero__inner">
 		<p class="eyebrow eyebrow--light">Mechanical &middot; Process Piping &middot; Plumbing &middot; Service</p>
 		<h1 class="hero__title">We Build<br><span>People</span></h1>
@@ -79,10 +80,23 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 
 <section class="section" aria-labelledby="services-title">
 	<div class="container">
-		<div class="section-head">
+		<div class="section-head section-head--cluster">
+			<div>
 			<p class="eyebrow">What we do //</p>
 			<h2 class="section-title" id="services-title">Services</h2>
 			<p class="section-lead">Years of work on every kind of mechanical system have taught us how facilities really operate. We plan every detail up front, so time-sensitive projects run smoothly.</p>
+			</div>
+			<?php
+			// Five service photos, honeycomb-style, echoing Quantum's "Who We Are" cluster.
+			$cluster = array();
+			foreach ( array( 'process-pure-water', 'welding-fabrication', 'steam-hydronics', 'medical-gas-equipment', 'service-maintenance' ) as $slug ) {
+				$group = get_page_by_path( $slug, OBJECT, 'vob_service' );
+				if ( $group && has_post_thumbnail( $group ) ) {
+					$cluster[] = get_post_thumbnail_id( $group );
+				}
+			}
+			echo vob_hex_cluster( $cluster ); // phpcs:ignore WordPress.Security.EscapeOutput
+			?>
 		</div>
 		<div class="service-grid">
 			<?php foreach ( $groups as $group ) : ?>
@@ -109,6 +123,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 </section>
 
 <section class="section section--dark industries" aria-labelledby="industries-title">
+	<?php echo vob_honeycomb( 'right' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	<div class="container">
 		<div class="section-head">
 			<p class="eyebrow eyebrow--light">Industries //</p>
@@ -159,6 +174,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 		echo get_the_post_thumbnail( $fab_page, 'vob-hero', array( 'class' => 'fab-band__bg', 'alt' => '', 'loading' => 'lazy' ) );
 	}
 	?>
+	<?php echo vob_honeycomb( 'right' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	<div class="container fab-band__inner">
 		<div>
 			<p class="eyebrow eyebrow--light">Prefabrication //</p>
@@ -212,6 +228,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 </section>
 
 <section class="section careers-band" aria-labelledby="careers-title">
+	<?php echo vob_honeycomb( 'right' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	<div class="container careers-band__inner">
 		<div>
 			<p class="eyebrow eyebrow--light">Careers //</p>

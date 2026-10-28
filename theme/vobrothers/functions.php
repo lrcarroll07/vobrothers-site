@@ -190,6 +190,29 @@ add_filter(
 );
 
 /**
+ * Decorative honeycomb texture (the hexagon motif shared with quantumindustrial.com).
+ * $modifiers: space-separated, e.g. 'right', 'bottom', 'right steel'.
+ */
+function vob_honeycomb( $modifiers = 'right' ) {
+	$classes = array_map( fn( $m ) => 'honeycomb--' . sanitize_html_class( $m ), array_filter( explode( ' ', $modifiers ) ) );
+	return '<span class="honeycomb ' . esc_attr( implode( ' ', $classes ) ) . '" aria-hidden="true"></span>';
+}
+
+/**
+ * Honeycomb cluster of up to five hexagon photos. Empty slots become red accent cells.
+ */
+function vob_hex_cluster( $attachment_ids ) {
+	$out = '<div class="hex-cluster" aria-hidden="true">';
+	for ( $i = 0; $i < 5; $i++ ) {
+		$id   = $attachment_ids[ $i ] ?? 0;
+		$out .= $id
+			? '<span class="hex-cluster__cell">' . wp_get_attachment_image( $id, 'vob-card', false, array( 'loading' => 'lazy', 'alt' => '' ) ) . '</span>'
+			: '<span class="hex-cluster__cell hex-cluster__cell--accent"></span>';
+	}
+	return $out . '</div>';
+}
+
+/**
  * Shared page hero: title, optional intro, background image.
  */
 function vob_page_hero( $args = array() ) {

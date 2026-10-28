@@ -12,6 +12,7 @@ $eyebrow  = $args['eyebrow'] ?? '';
 	<?php if ( $image_id ) : ?>
 		<?php echo wp_get_attachment_image( $image_id, 'vob-hero', false, array( 'class' => 'page-hero__bg', 'alt' => '', 'fetchpriority' => 'high', 'loading' => 'eager' ) ); ?>
 	<?php endif; ?>
+	<?php echo vob_honeycomb( 'right' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	<div class="container page-hero__inner">
 		<?php vob_the_breadcrumbs(); ?>
 		<?php if ( $eyebrow ) : ?>
