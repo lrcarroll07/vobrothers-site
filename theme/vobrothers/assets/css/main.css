@@ -411,6 +411,7 @@ p { margin: 0 0 1em; }
 .fact-card dl div { display: grid; grid-template-columns: 90px 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--mist); }
 .fact-card dt { font: 600 14px var(--font-head); letter-spacing: .1em; text-transform: uppercase; color: var(--steel); padding-top: 2px; }
 .fact-card dd { margin: 0; font-weight: 500; color: var(--ink); }
+.prose .photo-credit { margin-top: 32px; font-size: 13px !important; color: var(--steel) !important; }
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .gallery-grid img { aspect-ratio: 3 / 2; object-fit: cover; }
 

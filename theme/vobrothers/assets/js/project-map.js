@@ -28,7 +28,7 @@
 	} ).addTo( map );
 
 	// The relief has no place names, so label the cities our projects are in.
-	[ [ 'Logan', 41.737, -111.834 ], [ 'Ogden', 41.223, -111.973 ], [ 'Salt Lake City', 40.76, -111.891 ], [ 'Provo', 40.234, -111.659 ], [ 'Park City', 40.646, -111.498 ] ]
+	[ [ 'Brigham City', 41.510, -112.015 ], [ 'Kaysville', 41.035, -111.938 ], [ 'Logan', 41.737, -111.834 ], [ 'Ogden', 41.223, -111.973 ], [ 'Salt Lake City', 40.76, -111.891 ], [ 'Provo', 40.234, -111.659 ], [ 'Park City', 40.646, -111.498 ] ]
 		.forEach( ( [ name, lat, lng ] ) => L.marker( [ lat, lng ], {
 			icon: L.divIcon( { className: 'map-label', html: name, iconSize: null } ),
 			interactive: false,

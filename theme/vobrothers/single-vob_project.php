@@ -56,6 +56,10 @@ vob_page_hero(
 			<?php else : ?>
 				<p class="placeholder-note">Placeholder: add 4–8 high-resolution project photos (wide shots plus mechanical rooms, piping and welds).</p>
 			<?php endif; ?>
+			<?php $credit = get_post_meta( $post_id, 'vob_photo_credit', true ); ?>
+			<?php if ( $credit ) : ?>
+				<p class="photo-credit"><?php echo esc_html( $credit ); ?></p>
+			<?php endif; ?>
 		</div>
 
 		<aside class="detail__aside">

@@ -156,6 +156,7 @@ foreach ( $data['projects'] as $order => $project ) {
 				'vob_lat'            => (string) ( $project['lat'] ?? '' ),
 				'vob_lng'            => (string) ( $project['lng'] ?? '' ),
 				'vob_award'          => $project['award'] ?? '',
+				'vob_photo_credit'   => $project['credit'] ?? '',
 			),
 		)
 	);
