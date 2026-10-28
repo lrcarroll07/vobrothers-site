@@ -140,6 +140,34 @@ return array(
 	),
 
 	// ------------------------------------------------------------------
+	// Awards: name, project / category, issuing authority, year, kind (safety | project).
+	// The 18 from VO Brothers' awards list plus the two 2025 UC+D awards from
+	// Quantum's Utah newsletter.
+	// ------------------------------------------------------------------
+	'awards' => array(
+		array( 'Most Outstanding Specialty Contracting Project', 'Provo Wastewater Reclamation Facility', 'Utah Construction + Design', '2025', 'project' ),
+		array( 'Most Outstanding Water Project', 'Davis Aqueduct Reach 1 Parallel Pipeline', 'Utah Construction + Design', '2025', 'project' ),
+		array( 'STEP Award – Platinum Level', '', 'Associated Builders and Contractors (ABC)', '2026', 'safety' ),
+		array( 'Annual Workplace Safety Award', '', 'Utah Labor Commission & ABC', '2026', 'safety' ),
+		array( 'Annual Workplace Safety Award', '', 'Utah Labor Commission & ABC', '2025', 'safety' ),
+		array( 'STEP Award – Diamond Level', '', 'Associated Builders and Contractors (ABC)', '2025', 'safety' ),
+		array( 'Annual Workplace Safety Award', '', 'Utah Labor Commission & ABC', '2024', 'safety' ),
+		array( 'STEP Award – Platinum Level', '', 'Associated Builders and Contractors (ABC)', '2024', 'safety' ),
+		array( 'STEP Award – Silver Level', '', 'Associated Builders and Contractors (ABC)', '2023', 'safety' ),
+		array( 'STEP Award – Silver Level', '', 'Associated Builders and Contractors (ABC)', '2022', 'safety' ),
+		array( 'Excellence in Construction Award', 'Thermo Fisher · Mechanical, Commercial or Industrial Under $2 Million', 'Associated Builders and Contractors (ABC)', '2021', 'project' ),
+		array( 'Excellence in Construction Award', 'Davis Tech Allied Health Building · Mechanical Over $2 Million', 'Associated Builders and Contractors (ABC)', '2020', 'project' ),
+		array( 'Excellence in Construction Award', 'Davis Tech Allied Health Building · Sub-Contractor of the Year', 'Associated Builders and Contractors (ABC)', '2020', 'project' ),
+		array( 'Annual Workplace Safety Award', '', 'Utah Labor Commission & ABC', '2019', 'safety' ),
+		array( 'Excellence in Construction Award', 'Brigham City Community Hospital · Sub-Contractor of the Year', 'Associated Builders and Contractors (ABC)', '2019', 'project' ),
+		array( 'Excellence in Construction Award', 'Brigham City Community Hospital · Mechanical Over $2 Million', 'Associated Builders and Contractors (ABC)', '2019', 'project' ),
+		array( 'STEP Award – Platinum Level', '', 'Associated Builders and Contractors (ABC)', '2019', 'safety' ),
+		array( 'Most Outstanding Specialty Contracting – Mechanical', 'FAA SLC Air Route Traffic Control Center', 'Utah Construction & Design (UC&D)', '2019', 'project' ),
+		array( 'Excellence in Construction Award', 'Utah State University Life Sciences Building · Mechanical Over $1 Million', 'Associated Builders and Contractors (ABC)', '2018', 'project' ),
+		array( 'STEP Award – Silver Level', '', 'Associated Builders and Contractors (ABC)', '2018', 'safety' ),
+	),
+
+	// ------------------------------------------------------------------
 	// Projects. sectors/location map to the filter taxonomies.
 	// ------------------------------------------------------------------
 	'sector_terms'   => array( 'Higher Education', 'Healthcare & Medical', 'Manufacturing & Industrial', 'Water & Wastewater', 'Commercial & Data Center', 'Central Plants & Energy', 'Recreation & Athletics' ),

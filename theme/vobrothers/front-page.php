@@ -44,7 +44,8 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 	<div class="container proof__grid">
 		<div class="proof__item"><strong>4,900<small> tons</small></strong><span>Central chiller plant at Weber State</span></div>
 		<div class="proof__item"><strong>2M<small> gallons</small></strong><span>Thermal energy storage tank at Utah State</span></div>
-		<div class="proof__item"><strong>3</strong><span>Utah industry awards, including two in 2025</span></div>
+		<?php $award_count = function_exists( 'vob_awards' ) ? count( vob_awards() ) : 0; ?>
+		<div class="proof__item"><strong><?php echo (int) $award_count; ?></strong><span>Industry &amp; safety awards since 2018</span></div>
 		<div class="proof__item"><strong>24/7</strong><span>Emergency service &amp; maintenance plans</span></div>
 	</div>
 </section>
@@ -185,31 +186,27 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 			<p class="eyebrow">Recognition //</p>
 			<h2 class="section-title" id="awards-title">Proven in Utah</h2>
 		</div>
-		<div class="award-row">
-			<?php
-			$awards = array(
-				array( 'Most Outstanding Specialty Contracting Project', 'Utah Construction + Design', '2025', 'Provo Wastewater Reclamation Facility' ),
-				array( 'Most Outstanding Water Project', 'Utah Construction + Design', '2025', 'Davis Aqueduct Reach 1 Parallel Pipeline' ),
-				array( 'Sub-Contractor of the Year', 'Associated Builders and Contractors of Utah', '2020', '' ),
-			);
-			foreach ( $awards as list( $award, $org, $year, $project ) ) :
-				?>
-				<div class="recognition__award">
-					<?php echo vob_icon( 'award' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
-					<div>
-						<strong><?php echo esc_html( $award ); ?></strong>
-						<span><?php echo esc_html( $org . ' · ' . $year ); ?></span>
-						<?php if ( $project ) : ?>
-							<em><?php echo esc_html( $project ); ?></em>
-						<?php endif; ?>
-					</div>
-				</div>
-			<?php endforeach; ?>
-		</div>
+		<?php
+		$all_awards = function_exists( 'vob_awards' ) ? vob_awards() : array();
+		$years      = array_filter( array_map( 'intval', array_column( $all_awards, 'year' ) ) );
+		$safety     = array_filter( $all_awards, fn( $a ) => 'safety' === $a['kind'] );
+		?>
 		<div class="recognition">
-			<div class="recognition__item"><strong>Safety first</strong><span>A dedicated safety manager and a zero-incident goal on every site.</span></div>
-			<div class="recognition__item"><strong>Quantum backed</strong><span>Part of Quantum Industrial, with fabrication, training and resources to match.</span></div>
-			<div class="recognition__item"><strong>24/7/365</strong><span>Emergency service and preventative maintenance, around the clock.</span></div>
+			<div class="recognition__item recognition__item--stat"><strong><?php echo count( $all_awards ); ?></strong><span>Industry awards since <?php echo esc_html( $years ? min( $years ) : '' ); ?></span></div>
+			<div class="recognition__item recognition__item--stat"><strong><?php echo count( $safety ); ?></strong><span>Safety awards from ABC and the Utah Labor Commission, including ABC STEP Diamond</span></div>
+			<div class="recognition__item recognition__item--stat"><strong><?php echo count( $all_awards ) - count( $safety ); ?></strong><span>Project awards, including two &ldquo;Most Outstanding Projects&rdquo; of 2025</span></div>
+		</div>
+		<?php if ( $all_awards ) : ?>
+			<ul class="award-list award-list--home">
+				<?php
+				// Latest six, newest first.
+				foreach ( array_slice( $all_awards, 0, 6 ) as $award ) {
+					echo str_replace( '<div>', '<div><span class="award-item__year">' . esc_html( $award['year'] ) . '</span>', vob_award_card( $award ) ); // phpcs:ignore WordPress.Security.EscapeOutput
+				}
+				?>
+			</ul>
+		<?php endif; ?>
+		<p class="section-foot"><a class="link-arrow" href="<?php echo esc_url( home_url( '/about/awards/' ) ); ?>">See all <?php echo count( $all_awards ); ?> awards <?php echo vob_icon( 'arrow', 'icon icon--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></a></p>
 		</div>
 	</div>
 </section>

@@ -29,6 +29,12 @@ function vob_meta_fields() {
 			'vob_bullets'   => array( 'Key points (one per line)', 'textarea' ),
 			'vob_emergency' => array( 'Show the 24/7 emergency call-out on this page', 'checkbox' ),
 		),
+		'vob_award'       => array(
+			'vob_award_project' => array( 'Project / category (optional)', 'text' ),
+			'vob_award_issuer'  => array( 'Issuing authority', 'text' ),
+			'vob_award_year'    => array( 'Year', 'text' ),
+			'vob_award_kind'    => array( 'Kind (safety / project)', 'text' ),
+		),
 		'vob_team'        => array(
 			'vob_role'  => array( 'Job title', 'text' ),
 			'vob_group' => array( 'Show in (utah / quantum)', 'text' ),

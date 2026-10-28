@@ -636,6 +636,40 @@ p { margin: 0 0 1em; }
 	.team-card__name { font-size: 18px; }
 }
 
+/* Awards ----------------------------------------------------------------- */
+
+.award-list { list-style: none; padding: 0 !important; margin: 20px 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.award-list--home { grid-template-columns: repeat(3, 1fr); }
+.award-item {
+	margin: 0 !important; display: flex; gap: 16px; align-items: flex-start; padding: 20px 22px; background: var(--white);
+	border-left: 4px solid var(--red); box-shadow: var(--shadow); border-radius: var(--radius);
+}
+.award-item--safety { border-left-color: var(--charcoal); }
+.award-item__icon { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--mist); color: var(--red); }
+.award-item--safety .award-item__icon { color: var(--charcoal); }
+.award-item__icon .icon { width: 24px; height: 24px; }
+.award-item__year { display: block; font: 700 14px var(--font-head); letter-spacing: .14em; color: var(--red); margin-bottom: 2px; }
+.award-item__name { display: block; font: 700 20px/1.15 var(--font-head); color: var(--ink); text-transform: uppercase; }
+.award-item__project { display: block; margin-top: 4px; font-weight: 600; color: var(--graphite); font-size: 15px; line-height: 1.4; }
+.award-item__issuer { display: block; margin-top: 4px; font-size: 14px; color: var(--steel); line-height: 1.4; }
+.recognition__item--stat strong { font-size: 52px; line-height: 1; color: var(--red); margin-bottom: 8px; }
+.award-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); margin: 28px 0 40px; border-radius: var(--radius); overflow: hidden; }
+.award-stats div { background: var(--mist); padding: 24px; }
+.award-stats strong { display: block; font: 700 48px/1 var(--font-head); color: var(--red); margin-bottom: 6px; }
+.award-stats span { font-size: 15px; color: var(--graphite); line-height: 1.4; display: block; }
+.award-timeline { display: grid; gap: 36px; }
+.award-year { display: grid; grid-template-columns: 110px 1fr; gap: 24px; align-items: start; }
+.award-year__label { margin: 0 !important; font-size: 44px !important; color: var(--red); position: sticky; top: calc(var(--header-h) + 20px); }
+.award-year .award-list { margin: 0; grid-template-columns: 1fr; }
+@media (max-width: 1024px) {
+	.award-list--home { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+	.award-list, .award-list--home, .award-stats { grid-template-columns: 1fr; }
+	.award-year { grid-template-columns: 1fr; gap: 10px; }
+	.award-year__label { position: static; }
+}
+
 /* Responsive ------------------------------------------------------------- */
 
 @media (max-width: 1180px) {

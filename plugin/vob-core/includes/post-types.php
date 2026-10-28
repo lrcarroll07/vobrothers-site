@@ -6,6 +6,7 @@
  *                    children = individual services (/services/steam-hydronics/clean-steam/).
  * - vob_testimonial  Client / employee quotes shown on About and Careers.
  * - vob_team         Leadership team members (Utah region and Quantum Industrial).
+ * - vob_award        Industry and safety awards (Awards page, Safety page, home page).
  * - vob_lead         Form submissions (admin only), so no lead is lost if email fails.
  */
 
@@ -92,6 +93,19 @@ function vob_register_post_types() {
 			'menu_icon'     => 'dashicons-groups',
 			'menu_position' => 22,
 			'supports'      => array( 'title', 'thumbnail', 'page-attributes' ),
+			'show_in_rest'  => true,
+		)
+	);
+
+	register_post_type(
+		'vob_award',
+		array(
+			'labels'        => vob_labels( 'Award', 'Awards' ),
+			'public'        => false,
+			'show_ui'       => true,
+			'menu_icon'     => 'dashicons-awards',
+			'menu_position' => 22,
+			'supports'      => array( 'title' ),
 			'show_in_rest'  => true,
 		)
 	);

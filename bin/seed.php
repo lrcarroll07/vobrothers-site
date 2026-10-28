@@ -254,9 +254,25 @@ foreach ( $quotes as $order => $quote ) {
 }
 
 // Utah awards: ABC Utah (2020) and Utah Construction + Design "Most Outstanding Projects of 2025".
-$abc_award = '<div class="award-callout">' . vob_icon_markup( 'award' ) . '<div><strong>Most Outstanding Specialty Contracting Project</strong><br>Utah Construction + Design, 2025 &middot; Provo Wastewater Reclamation Facility (plumbing contractor)</div></div>'
-	. '<div class="award-callout">' . vob_icon_markup( 'award' ) . '<div><strong>Most Outstanding Water Project</strong><br>Utah Construction + Design, 2025 &middot; Davis Aqueduct Reach 1 Parallel Pipeline (plumbing contractor)</div></div>'
-	. '<div class="award-callout">' . vob_icon_markup( 'award' ) . '<div><strong>ABC Utah Sub-Contractor of the Year</strong><br>Associated Builders and Contractors of Utah, 2020</div></div>';
+foreach ( $data['awards'] as $order => list( $name, $project, $issuer, $year, $kind ) ) {
+	wp_insert_post(
+		array(
+			'post_type'   => 'vob_award',
+			'post_status' => 'publish',
+			'post_title'  => $name,
+			'menu_order'  => $order,
+			'meta_input'  => array(
+				'vob_award_project' => $project,
+				'vob_award_issuer'  => $issuer,
+				'vob_award_year'    => $year,
+				'vob_award_kind'    => $kind,
+			),
+		)
+	);
+}
+
+// About page: award summary linking to the full Awards page.
+$abc_award = '<div class="award-callout">' . vob_icon_markup( 'award' ) . '<div><strong>20 industry awards since 2018</strong><br>Including 11 safety awards from ABC and the Utah Labor Commission, and two Utah Construction + Design &ldquo;Most Outstanding Projects&rdquo; of 2025. <a href="' . esc_url( home_url( '/about/awards/' ) ) . '">See all awards</a></div></div>';
 
 $about_image = vob_seed_image( 'site/about.jpg', 'The VO Brothers Mechanical team' );
 $about       = vob_seed_page(
@@ -301,8 +317,20 @@ vob_seed_page(
 <div class="value-card"><h3>Everyone looks out</h3><p>We invest in the latest safety equipment and technologies, and cultivate a culture where everyone looks out for one another.</p></div>
 </div>
 <p>Safety shapes everything we do, from the office to the field. Our reputation rests on how our people work, and keeping safety first produces the best outcome for our team and our clients.</p>
-<p>Our Utah safety program is led by <strong>Dennis Valdez, Safety Manager</strong>.</p>',
+<p>Our Utah safety program is led by <strong>Dennis Valdez, Safety Manager</strong>.</p>
+<h2>Safety recognition</h2>
+<p>Our safety program has earned recognition year after year, including ABC\'s STEP awards (Safety Training and Evaluation Process) at Silver, Platinum and Diamond levels, and the Annual Workplace Safety Award from the Utah Labor Commission and ABC.</p>
+[vob_awards kind="safety" layout="list"]',
 	array( 'post_parent' => $about, 'menu_order' => 2, 'post_excerpt' => 'Committed to zero incidents and a zero-injury workforce.' )
+);
+
+vob_seed_page(
+	'Awards',
+	'awards',
+	'<p class="lead">Year after year, our work and our safety record have been recognized by Associated Builders and Contractors, the Utah Labor Commission and Utah Construction + Design.</p>
+[vob_award_stats]
+[vob_awards]',
+	array( 'post_parent' => $about, 'menu_order' => 3, 'post_excerpt' => 'Recognized for construction excellence and safety across Utah.' )
 );
 
 vob_seed_page(
@@ -312,7 +340,7 @@ vob_seed_page(
 [vob_testimonials audience="client"]
 <h2>From our team</h2>
 [vob_testimonials audience="employee"]',
-	array( 'post_parent' => $about, 'menu_order' => 3, 'post_excerpt' => 'What our customers and our people say.' )
+	array( 'post_parent' => $about, 'menu_order' => 4, 'post_excerpt' => 'What our customers and our people say.' )
 );
 
 $quantum_page = vob_seed_page(
@@ -330,7 +358,7 @@ $quantum_page = vob_seed_page(
 <h2>Quantum leadership</h2>
 [vob_team group="quantum"]
 <p><a class="btn btn--primary" href="https://quantumindustrial.com" target="_blank" rel="noopener">Visit Quantum Industrial</a></p>',
-	array( 'post_parent' => $about, 'menu_order' => 4, 'post_excerpt' => 'Our parent company.' )
+	array( 'post_parent' => $about, 'menu_order' => 5, 'post_excerpt' => 'Our parent company.' )
 );
 
 $careers = vob_seed_page(
