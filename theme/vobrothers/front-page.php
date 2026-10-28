@@ -222,12 +222,12 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 
 <section class="section parent-band" aria-labelledby="parent-title">
 	<div class="container parent-band__inner">
-		<p class="parent-band__mark" aria-hidden="true">Q</p>
+		<img class="parent-band__logo" src="<?php echo esc_url( get_theme_file_uri( 'assets/img/quantum-logo.png' ) ); ?>" width="447" height="96" alt="<?php echo esc_attr( vob_t_info( 'parent_name' ) ); ?>" loading="lazy">
 		<div>
 			<h2 class="parent-band__title" id="parent-title">A <?php echo esc_html( vob_t_info( 'parent_name' ) ); ?> Company</h2>
 			<p>In 2024 VO Brothers Mechanical joined <?php echo esc_html( vob_t_info( 'parent_name' ) ); ?>, an industrial mechanical and plumbing contractor serving clients across the United States. We still operate as VO Brothers, with the same local team, from our shop in Ogden.</p>
 		</div>
-		<a class="btn btn--outline" href="<?php echo esc_url( home_url( '/about/quantum-industrial/' ) ); ?>">Learn more</a>
+		<a class="btn btn--quantum" href="<?php echo esc_url( home_url( '/about/quantum-industrial/' ) ); ?>">Learn more</a>
 	</div>
 </section>
 

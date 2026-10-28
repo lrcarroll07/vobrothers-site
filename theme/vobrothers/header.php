@@ -11,7 +11,11 @@
 
 <div class="topbar">
 	<div class="container topbar__inner">
-		<a class="topbar__parent" href="<?php echo esc_url( vob_t_info( 'parent_url' ) ); ?>" target="_blank" rel="noopener">A <strong><?php echo esc_html( vob_t_info( 'parent_name' ) ); ?></strong> Company</a>
+		<a class="topbar__parent" href="<?php echo esc_url( vob_t_info( 'parent_url' ) ); ?>" target="_blank" rel="noopener">
+			<span class="topbar__parent-word">A</span>
+			<img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/quantum-logo.png' ) ); ?>" width="447" height="96" alt="<?php echo esc_attr( vob_t_info( 'parent_name' ) ); ?>">
+			<span class="topbar__parent-word">Company</span>
+		</a>
 		<div class="topbar__contact">
 			<a class="topbar__emergency" href="<?php echo esc_attr( vob_t_tel( vob_t_info( 'emergency_phone' ) ) ); ?>">
 				<?php echo vob_icon( 'phone', 'icon icon--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>

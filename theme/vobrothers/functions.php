@@ -34,7 +34,7 @@ add_action(
 add_action(
 	'wp_enqueue_scripts',
 	function () {
-		wp_enqueue_style( 'vob-fonts', 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap', array(), null );
+		wp_enqueue_style( 'vob-fonts', 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Michroma&display=swap', array(), null );
 		wp_enqueue_style( 'vob-main', get_theme_file_uri( 'assets/css/main.css' ), array( 'vob-fonts' ), VOB_THEME_VERSION );
 		wp_enqueue_script( 'vob-main', get_theme_file_uri( 'assets/js/main.js' ), array(), VOB_THEME_VERSION, array( 'strategy' => 'defer' ) );
 

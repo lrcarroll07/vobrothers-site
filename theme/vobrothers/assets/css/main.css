@@ -14,7 +14,14 @@
 	--mist: #f1f2f4;
 	--line: #dcdfe3;
 	--white: #fff;
-	--blue: #3e95d3;
+	--blue: #2c87c8;
+
+	/* Quantum Industrial (parent) palette: black, white, Quantum blue, extended type. */
+	--q-black: #000;
+	--q-blue: #2c87c8;
+	--q-blue-bright: #2ea3f2;
+	--q-gray: #9a9a9a;
+	--font-quantum: "Michroma", "Eurostile Extended", var(--font-head);
 
 	--font-head: "Barlow Condensed", "Arial Narrow", sans-serif;
 	--font-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -92,14 +99,20 @@ p { margin: 0 0 1em; }
 
 /* Top bar & header ------------------------------------------------------- */
 
-.topbar { background: var(--ink); color: var(--steel-light); font-size: 14px; }
-.topbar__inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 40px; }
+/* The top bar is the Quantum Industrial strip: their black, blue and extended type. */
+.topbar { background: var(--q-black); color: var(--q-gray); font-size: 13.5px; border-bottom: 1px solid rgba(44, 135, 200, .35); }
+.topbar__inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 42px; }
 .topbar a { color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
 .topbar a:hover { color: var(--white); }
-.topbar__parent strong { color: var(--white); font-weight: 600; }
+.topbar__parent { gap: 10px !important; }
+.topbar__parent img { height: 20px; width: auto; }
+.topbar__parent-word { font: 400 10px var(--font-quantum); letter-spacing: .22em; text-transform: uppercase; color: var(--q-gray); }
+.topbar__parent:hover .topbar__parent-word { color: var(--q-blue-bright); }
 .topbar__contact { display: flex; gap: 24px; }
+.topbar__contact .icon { color: var(--q-blue); }
 .topbar__emergency { color: var(--white) !important; }
-.topbar__emergency .icon, .topbar__emergency strong { color: #ff6b70; }
+.topbar__emergency strong { color: var(--q-blue-bright); font-weight: 600; }
+.topbar__email:hover span { color: var(--q-blue-bright); }
 
 .site-header {
 	position: sticky; top: 0; z-index: 50; background: var(--charcoal);
@@ -345,14 +358,14 @@ p { margin: 0 0 1em; }
 
 /* Parent company band ---------------------------------------------------- */
 
-.parent-band { padding: 48px 0; border-top: 1px solid var(--line); }
-.parent-band__inner { display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center; }
-.parent-band__mark {
-	margin: 0; width: 64px; height: 64px; display: grid; place-items: center; border: 4px solid var(--blue);
-	color: var(--blue); font: 700 36px var(--font-head); clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-}
-.parent-band__title { font-size: 28px; text-transform: uppercase; margin-bottom: 4px; }
-.parent-band p { margin: 0; color: var(--steel); }
+/* Quantum Industrial band, in the parent company's scheme. */
+.parent-band { padding: 52px 0; background: var(--q-black); border-top: 3px solid var(--q-blue); }
+.parent-band__inner { display: grid; grid-template-columns: auto 1fr auto; gap: 40px; align-items: center; }
+.parent-band__logo { height: 56px; width: auto; }
+.parent-band__title { font: 400 17px var(--font-quantum); letter-spacing: .14em; text-transform: uppercase; color: var(--white); margin-bottom: 8px; }
+.parent-band p { margin: 0; color: var(--q-gray); }
+.btn--quantum { border-color: var(--q-blue); color: var(--q-blue-bright); background: transparent; border-radius: 0; }
+.btn--quantum:hover { background: var(--q-blue); color: var(--white); }
 
 /* CTA band --------------------------------------------------------------- */
 
@@ -681,7 +694,10 @@ p { margin: 0 0 1em; }
 	.checklist--cols { columns: 1; }
 	.form-grid { grid-template-columns: 1fr; }
 	.job { flex-direction: column; align-items: flex-start; }
-	.parent-band__inner { grid-template-columns: 1fr; }
+	.parent-band__inner { grid-template-columns: 1fr; gap: 20px; }
+	.parent-band__logo { height: 44px; }
+	.topbar__parent img { height: 17px; }
+	.topbar__parent-word { font-size: 8.5px; letter-spacing: .16em; }
 	.emergency-callout { flex-wrap: wrap; }
 	.emergency-callout__phone { margin-left: 28px; }
 	.site-footer__grid { grid-template-columns: 1fr; }
