@@ -50,6 +50,14 @@ Pages show yellow "Placeholder" notes where these go:
 9. Confirm the **24/7 emergency number**. It's currently the main line, 866-722-1267.
 10. Confirm project locations marked only "Utah" (Xactware, Fresenius, Elkay, US Ski & Snowboard), and the full scope for the U of U Guest House (the old site's text was cut off).
 
+## Free preview in WordPress Playground
+
+`bin/playground-bundle.sh` (after `bin/setup.sh`) builds `dist/vobrothers-playground.zip`.
+To view it: open https://playground.wordpress.net → **New** → **Import zip** → choose the file.
+The whole site runs in that browser tab; nothing is public, and changes vanish when the tab closes.
+Forms won't send email there. The bundle includes a Playground-only startup file
+(`content/playground/vob-playground-urls.php`) that rewrites the stored local URLs on first load.
+
 ## Hidden preview site
 
 `bin/deploy.sh` publishes to any WordPress host with SSH and WP-CLI. Credentials are read from

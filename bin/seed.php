@@ -197,7 +197,7 @@ $about       = vob_seed_page(
 <p>Our company has been cultivated through years of supporting a wide range of mechanical systems. Our culture knows and understands facility operational needs, and has adapted to time-sensitive projects that require extensive upfront planning for successful execution.</p>
 <figure class="wp-block-image">' . wp_get_attachment_image( $about_image, 'large' ) . '</figure>
 <h2>A Quantum Industrial company</h2>
-<p>VO Brothers Mechanical is part of Quantum Industrial. We operate under the VO Brothers name, with the same local team, from our shop in Ogden, Utah. <a href="/about/quantum-industrial/">Learn more about our parent company</a>.</p>
+<p>VO Brothers Mechanical is part of Quantum Industrial. We operate under the VO Brothers name, with the same local team, from our shop in Ogden, Utah. <a href="' . esc_url( home_url( '/about/quantum-industrial/' ) ) . '">Learn more about our parent company</a>.</p>
 ' . vob_placeholder( 'add company history (founding year, founders, milestones), leadership team photos and bios, and licenses held.' ),
 	array( 'post_excerpt' => 'A community of friends, teammates and talented mechanics, determined for progress.' )
 );
@@ -327,6 +327,9 @@ vob_seed_menu_post( $footer, $careers );
 vob_seed_menu_post( $footer, $contact, 0, 'Contact' );
 
 set_theme_mod( 'nav_menu_locations', array( 'primary' => $primary, 'footer' => $footer ) );
+// switch_theme() leaves a "theme_switched" flag; on the next page load WordPress would
+// re-map menu locations from the previous theme (none) and wipe the assignments above.
+delete_option( 'theme_switched' );
 
 flush_rewrite_rules();
 
