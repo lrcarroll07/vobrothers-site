@@ -58,6 +58,13 @@ The whole site runs in that browser tab; nothing is public, and changes vanish w
 Forms won't send email there. The bundle includes a Playground-only startup file
 (`content/playground/vob-playground-urls.php`) that rewrites the stored local URLs on first load.
 
+**Shareable link** (public repo only): `bin/publish-preview.sh` rebuilds the bundle, force-pushes it to
+the `playground-preview` branch and prints the link:
+
+https://playground.wordpress.net/?mode=seamless&blueprint-url=https://raw.githubusercontent.com/lrcarroll07/vobrothers-site/playground-preview/blueprint.json
+
+Re-run it after content changes; the same link then shows the new version.
+
 ## Hidden preview site
 
 `bin/deploy.sh` publishes to any WordPress host with SSH and WP-CLI. Credentials are read from
