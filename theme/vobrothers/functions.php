@@ -175,6 +175,34 @@ add_filter(
 );
 
 /**
+ * Color scheme from Settings → VO Brothers. While reviewing, ?palette=vo|family previews
+ * a scheme and remembers it for the visit (cookie), without changing the setting.
+ */
+function vob_palette() {
+	$allowed = array( 'vo', 'family' );
+	if ( isset( $_GET['palette'] ) && in_array( $_GET['palette'], $allowed, true ) ) {
+		$palette = sanitize_key( $_GET['palette'] );
+		if ( ! headers_sent() ) {
+			setcookie( 'vob_palette', $palette, 0, COOKIEPATH ?: '/' );
+		}
+		return $palette;
+	}
+	if ( isset( $_COOKIE['vob_palette'] ) && in_array( $_COOKIE['vob_palette'], $allowed, true ) ) {
+		return $_COOKIE['vob_palette'];
+	}
+	$palette = function_exists( 'vob_info' ) ? vob_info( 'palette' ) : 'vo';
+	return in_array( $palette, $allowed, true ) ? $palette : 'vo';
+}
+
+add_filter(
+	'body_class',
+	function ( $classes ) {
+		$classes[] = 'palette-' . vob_palette();
+		return $classes;
+	}
+);
+
+/**
  * Add an accessible toggle button to menu items that have sub-menus.
  */
 add_filter(

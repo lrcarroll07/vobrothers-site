@@ -32,6 +32,7 @@ function vob_info_fields() {
 		'facebook'        => array( 'Facebook URL', 'https://www.facebook.com/VO-Brothers-Mechanical-102961519742192/' ),
 		'instagram'       => array( 'Instagram URL', 'https://www.instagram.com/vomech18/' ),
 		'x'               => array( 'X (Twitter) URL', 'https://x.com/vomechanical' ),
+		'palette'         => array( 'Color scheme: "vo" (all red accents) or "family" (red actions, Quantum blue details)', 'vo' ),
 		'awards_since'    => array( 'Show awards from this year onward (older awards stay on their project pages)', '2020' ),
 		'preview_password' => array( 'Preview password (visitors must enter it; leave blank to make the site public)', '' ),
 	);
