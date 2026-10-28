@@ -3,12 +3,15 @@
  * Loads the prototype content into a fresh install: activates the theme and
  * plugin, imports images, creates services, projects, pages and menus.
  *
- * Run via bin/setup.sh (expects an empty, freshly installed site).
+ * Locally: run by bin/setup.sh. On a host: `wp eval-file seed.php` (see bin/deploy.sh).
+ * Only runs against a fresh install, unless VOB_SEED_FORCE=1 is set.
  */
 
-$_SERVER['HTTP_HOST']   = 'localhost';
-$_SERVER['REQUEST_URI'] = '/';
-require __DIR__ . '/../wp/wp-load.php';
+if ( ! defined( 'ABSPATH' ) ) {
+	$_SERVER['HTTP_HOST']   = 'localhost';
+	$_SERVER['REQUEST_URI'] = '/';
+	require __DIR__ . '/../wp/wp-load.php';
+}
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
 require_once ABSPATH . 'wp-admin/includes/image.php';
 require_once ABSPATH . 'wp-admin/includes/file.php';
@@ -17,7 +20,17 @@ require_once ABSPATH . 'wp-admin/includes/media.php';
 $root = dirname( __DIR__ );
 $data = require $root . '/content/seed-data.php';
 
-wp_set_current_user( 1 );
+// Refuse to run over real content: a fresh install has at most 3 posts/pages
+// (Hello world, Sample Page, Privacy Policy) and no projects.
+global $wpdb;
+$existing = (int) $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts WHERE post_type IN ('post','page','vob_project','vob_service') AND post_status <> 'auto-draft'" );
+if ( $existing > 3 && ! getenv( 'VOB_SEED_FORCE' ) ) {
+	fwrite( STDERR, "This site already has content ($existing posts/pages). Not seeding. Set VOB_SEED_FORCE=1 to override.\n" );
+	exit( 1 );
+}
+
+$admins = get_users( array( 'role' => 'administrator', 'number' => 1, 'orderby' => 'ID' ) );
+wp_set_current_user( $admins ? $admins[0]->ID : 1 );
 
 // Theme, plugin, settings ----------------------------------------------------
 

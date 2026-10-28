@@ -50,6 +50,25 @@ Pages show yellow "Placeholder" notes where these go:
 9. Confirm the **24/7 emergency number**. It's currently the main line, 866-722-1267.
 10. Confirm project locations marked only "Utah" (Xactware, Fresenius, Elkay, US Ski & Snowboard), and the full scope for the U of U Guest House (the old site's text was cut off).
 
+## Hidden preview site
+
+`bin/deploy.sh` publishes to any WordPress host with SSH and WP-CLI. Credentials are read from
+environment variables (`VOB_SSH_HOST`, `VOB_SSH_USER`, `VOB_SSH_KEY` or `VOB_SSH_PASSWORD`,
+optional `VOB_SSH_PORT` / `VOB_WP_PATH`, and `VOB_PREVIEW_PASSWORD`). Never commit them.
+
+```bash
+bin/deploy.sh check   # test the connection; shows PHP, WordPress and WP-CLI versions on the host
+bin/deploy.sh setup   # first time, on a FRESH WordPress install: theme, plugin, all content, preview mode
+bin/deploy.sh code    # later: update theme + plugin only (content edited in wp-admin is untouched)
+```
+
+Preview mode:
+- **Hidden from search:** "Discourage search engines" is on (noindex tags) and every response sends `X-Robots-Tag: noindex, nofollow`.
+- **Password gate:** visitors enter the preview password once (remembered 30 days); logged-in editors skip it. The REST API is closed to logged-out visitors.
+- **To launch for real:** clear the preview password (Settings → VO Brothers), untick "Discourage search engines" (Settings → Reading), and move the site to vomech.com.
+
+`setup` refuses to run on a site that already has content, so it can't overwrite real work.
+
 ## Going to production
 
 1. Managed WordPress host (MySQL); install the theme and plugin zips; enter content (or adapt `bin/seed.php` to import it).
