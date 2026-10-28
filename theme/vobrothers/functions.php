@@ -35,7 +35,7 @@ add_action(
 	'wp_enqueue_scripts',
 	function () {
 		wp_enqueue_style( 'vob-fonts', 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Michroma&display=swap', array(), null );
-		wp_enqueue_style( 'vob-main', get_theme_file_uri( 'assets/css/main.css' ), array( 'vob-fonts' ), VOB_THEME_VERSION );
+		wp_enqueue_style( 'vob-main', get_theme_file_uri( 'assets/css/main.css' ), array( 'vob-fonts' ), VOB_THEME_VERSION . '.' . filemtime( get_theme_file_path( 'assets/css/main.css' ) ) );
 		wp_enqueue_script( 'vob-main', get_theme_file_uri( 'assets/js/main.js' ), array(), VOB_THEME_VERSION, array( 'strategy' => 'defer' ) );
 
 		// Project map (Leaflet, bundled locally) only where it's used.
@@ -199,6 +199,34 @@ add_filter(
 	function ( $classes ) {
 		$classes[] = 'palette-' . vob_palette();
 		return $classes;
+	}
+);
+
+/**
+ * Floating color-scheme switch for reviewers. Shown only on hidden preview copies
+ * (search engines discouraged) or to site admins, never to the public.
+ */
+add_action(
+	'wp_footer',
+	function () {
+		if ( '0' !== (string) get_option( 'blog_public' ) && ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+		$current = vob_palette();
+		$options = array(
+			'vo'     => 'VO red',
+			'family' => 'VO + Quantum blue',
+		);
+		echo '<nav class="palette-switch" aria-label="Preview color scheme"><span>Colors</span>';
+		foreach ( $options as $key => $label ) {
+			printf(
+				'<a href="%s"%s>%s</a>',
+				esc_url( add_query_arg( 'palette', $key ) ),
+				$key === $current ? ' aria-current="true"' : '',
+				esc_html( $label )
+			);
+		}
+		echo '</nav>';
 	}
 );
 
