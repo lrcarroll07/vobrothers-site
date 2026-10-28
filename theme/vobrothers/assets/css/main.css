@@ -517,6 +517,101 @@ p { margin: 0 0 1em; }
 .site-footer__bottom p { margin: 0; }
 .site-footer__bottom a { color: var(--white); }
 
+/* Project map ------------------------------------------------------------ */
+
+.project-map {
+	height: clamp(360px, 56vh, 560px); margin: 0 0 24px; border-radius: var(--radius); overflow: hidden;
+	background: var(--ink); border-bottom: 4px solid var(--red); z-index: 0;
+}
+.project-map__noscript { color: var(--steel-light); padding: 24px; }
+.map-pin {
+	display: block; width: 22px; height: 22px; border-radius: 50%; background: var(--red);
+	border: 3px solid var(--white); box-shadow: 0 0 0 6px rgba(193, 39, 45, .35), 0 4px 10px rgba(0,0,0,.4);
+	transition: transform .15s;
+}
+.map-pin:hover { transform: scale(1.15); }
+.map-pin--cluster {
+	width: 40px; height: 40px; display: grid; place-items: center; color: var(--white);
+	font: 700 18px var(--font-head); box-shadow: 0 0 0 8px rgba(193, 39, 45, .35), 0 4px 12px rgba(0,0,0,.45);
+}
+.project-map .leaflet-popup-content-wrapper { border-radius: var(--radius); padding: 0; overflow: hidden; }
+.project-map .leaflet-popup-content { margin: 0; }
+.map-popup { display: block; width: 100%; color: inherit; text-decoration: none; }
+.map-popup img { width: 100%; height: 130px; object-fit: cover; }
+.map-popup__body { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px 14px; border-top: 3px solid var(--red); }
+.map-popup__sector { font: 600 11px var(--font-head); letter-spacing: .12em; text-transform: uppercase; color: var(--red); }
+.map-popup__title { font: 700 19px/1.15 var(--font-head); color: var(--ink); }
+.map-popup__meta { font-size: 13px; color: var(--steel); }
+.map-popup__more { margin-top: 6px; font: 600 13px var(--font-head); letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
+.map-popup:hover .map-popup__title { color: var(--red); }
+.map-popup-list { max-height: 320px; overflow-y: auto; }
+.map-popup-list .map-popup + .map-popup { border-top: 1px solid var(--line); }
+.map-popup-list .map-popup img { height: 90px; }
+.project-map.leaflet-container { font-family: var(--font-body); background: #15171a; }
+.project-map .map-tiles { filter: grayscale(1) brightness(.4) contrast(1.4); }
+.map-label {
+	white-space: nowrap; transform: translate(-50%, 28px); color: rgba(255,255,255,.75);
+	font: 600 12px var(--font-head); letter-spacing: .18em; text-transform: uppercase; text-shadow: 0 1px 3px #000;
+}
+
+/* Team ------------------------------------------------------------------- */
+
+.team-grid { list-style: none; padding: 0 !important; margin: 28px 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 24px; }
+.team-card { margin: 0 !important; text-align: center; }
+.team-card img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); border-bottom: 4px solid var(--red); margin-bottom: 12px; }
+.team-card__name { display: block; font: 700 21px/1.15 var(--font-head); color: var(--ink); }
+.team-card__role { display: block; font-size: 14.5px; color: var(--steel); line-height: 1.4; }
+
+/* Benefits --------------------------------------------------------------- */
+
+.benefit-grid { list-style: none; padding: 0 !important; margin: 24px 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.benefit-grid li {
+	margin: 0 !important; display: flex; align-items: center; gap: 12px; padding: 18px 20px; background: var(--mist);
+	border-left: 4px solid var(--red); font: 700 18px var(--font-head); letter-spacing: .04em; text-transform: uppercase; color: var(--ink);
+}
+.benefit-grid .icon { color: var(--red); }
+
+/* Fabrication band ------------------------------------------------------- */
+
+.fab-band { background: var(--ink); color: var(--steel-light); position: relative; isolation: isolate; overflow: hidden; }
+.fab-band__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; opacity: .35; }
+.fab-band::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10,11,13,.96) 35%, rgba(10,11,13,.6)); }
+.fab-band .section-title { color: var(--white); }
+.fab-band__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+.fab-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,.1); }
+.fab-stat { background: rgba(17,19,22,.92); padding: 26px 24px; }
+.fab-stat strong { display: block; font: 700 40px/1 var(--font-head); color: var(--white); margin-bottom: 6px; }
+.fab-stat strong small { font-size: 20px; color: var(--steel-light); }
+.fab-stat span { font-size: 14.5px; }
+.fab-band .tag-list a { background: rgba(255,255,255,.08); color: var(--white); }
+
+/* Recognition ------------------------------------------------------------ */
+
+.recognition { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 20px; }
+.recognition__award {
+	display: flex; gap: 20px; align-items: center; padding: 28px; background: var(--white); border-top: 5px solid var(--red); box-shadow: var(--shadow);
+}
+.recognition__award .icon { width: 56px; height: 56px; color: var(--red); flex: none; }
+.recognition__award strong { display: block; font: 700 26px/1.1 var(--font-head); color: var(--ink); text-transform: uppercase; }
+.recognition__award span { color: var(--steel); }
+.recognition__item { padding: 28px 24px; background: var(--white); border-top: 5px solid var(--charcoal); }
+.recognition__item strong { display: block; font: 700 22px/1.1 var(--font-head); color: var(--ink); margin-bottom: 6px; }
+.recognition__item span { font-size: 15px; color: var(--steel); }
+.prose .award-callout { display: flex; gap: 16px; align-items: center; padding: 20px 24px; background: var(--mist); border-left: 5px solid var(--red); margin: 24px 0; }
+.prose .award-callout strong { font: 700 22px var(--font-head); color: var(--ink); text-transform: uppercase; }
+
+@media (max-width: 1024px) {
+	.fab-band__inner { grid-template-columns: 1fr; }
+	.recognition { grid-template-columns: 1fr 1fr; }
+	.recognition__award { grid-column: 1 / -1; }
+	.benefit-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+	.recognition, .benefit-grid, .fab-stats { grid-template-columns: 1fr; }
+	.team-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+	.team-card__name { font-size: 18px; }
+}
+
 /* Responsive ------------------------------------------------------------- */
 
 @media (max-width: 1180px) {

@@ -5,6 +5,7 @@
  * - vob_service      Hierarchical: top level = service group (/services/steam-hydronics/),
  *                    children = individual services (/services/steam-hydronics/clean-steam/).
  * - vob_testimonial  Client / employee quotes shown on About and Careers.
+ * - vob_team         Leadership team members (Utah region and Quantum Industrial).
  * - vob_lead         Form submissions (admin only), so no lead is lost if email fails.
  */
 
@@ -78,6 +79,19 @@ function vob_register_post_types() {
 			'menu_icon'     => 'dashicons-format-quote',
 			'menu_position' => 22,
 			'supports'      => array( 'title', 'editor', 'page-attributes' ),
+			'show_in_rest'  => true,
+		)
+	);
+
+	register_post_type(
+		'vob_team',
+		array(
+			'labels'        => vob_labels( 'Team Member', 'Team' ),
+			'public'        => false,
+			'show_ui'       => true,
+			'menu_icon'     => 'dashicons-groups',
+			'menu_position' => 22,
+			'supports'      => array( 'title', 'thumbnail', 'page-attributes' ),
 			'show_in_rest'  => true,
 		)
 	);

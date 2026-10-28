@@ -14,6 +14,9 @@ const pages = {
 	projects: '/projects/',
 	project: '/projects/weber-state-chiller-plant/',
 	about: '/about/',
+	'core-values': '/about/core-values/',
+	quantum: '/about/quantum-industrial/',
+	fabrication: '/services/welding-fabrication/',
 	careers: '/careers/',
 	contact: '/contact/',
 };

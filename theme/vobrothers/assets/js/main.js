@@ -84,6 +84,7 @@
 			if ( empty ) {
 				empty.hidden = shown > 0;
 			}
+			root.dispatchEvent( new CustomEvent( 'vob:filter', { detail: { group, area } } ) );
 		};
 
 		chips.forEach( ( chip ) => {
@@ -97,6 +98,7 @@
 			} );
 		} );
 		select?.addEventListener( 'change', apply );
+		root.vobApplyFilter = apply;
 		apply();
 	} );
 }() );

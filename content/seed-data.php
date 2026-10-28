@@ -81,15 +81,17 @@ return array(
 			),
 		),
 		array(
-			'title'    => 'Welding & Fabrication',
+			'title'    => 'Fabrication & Welding',
 			'slug'     => 'welding-fabrication',
 			'icon'     => 'weld',
-			'image'    => 'services/orbital-welding.jpg',
-			'tagline'  => 'Repeatable orbital welding and X-ray-standard specialty welding.',
-			'excerpt'  => 'Repeatable, high-quality orbital welding for sanitary systems and X-ray-standard specialty welding.',
-			'content'  => "<p>Sanitary and high-purity systems are only as good as their welds. Our orbital welding delivers repeatable, high-quality results, and our specialty welders work to X-ray standards.</p>",
-			'bullets'  => "Orbital welding for sanitary and high-purity piping\nX-ray-standard specialty welding\nCustom fabrication",
+			'image'    => 'fabrication/novarc-swr-2.jpg',
+			'tagline'  => 'Robotic pipe prefabrication, orbital welding and X-ray-standard specialty welding.',
+			'excerpt'  => 'Pipe spool prefabrication in Quantum Industrial\'s 136,000 sq ft fabrication facility, plus orbital and X-ray-standard specialty welding in the field.',
+			'content'  => "<p>Sanitary and high-purity systems are only as good as their welds. Our orbital welding delivers repeatable, high-quality results, and our specialty welders work to X-ray standards.</p>\n<h2>Quantum fabrication facility</h2>\n<p>As a Quantum Industrial company, VO Brothers projects can draw on Quantum Fabrication: a 136,000 sq ft pipe fabrication facility in Mesa, Arizona, with areas for both large-scale and specialized, bespoke fabrication. It serves mission-critical environments where uptime, precision, safety and compliance are essential, such as semiconductor manufacturing, data centers, life sciences and food and beverage processing.</p>\n<p>Two pieces of equipment set the shop apart:</p>\n<ul><li><strong>HGG ProCutter 900 RB.</strong> Advanced 3D profiling and automated cutting make every cut accurate and repeatable, eliminating costly errors and rework and cutting material waste and field fabrication time.</li><li><strong>Novarc Spool Welding Robot (SWR&trade;).</strong> A welding cobot that works alongside our master welders. It increases pipe welding productivity 3&ndash;5&times; for carbon steel and up to 12&times; for stainless steel: 7 minutes to weld a 6&Prime; Sch. 40 stainless pipe versus 29 minutes by MIG, and 55 minutes for a 30&Prime; pipe versus 2.75 hours.</li></ul>\n<p>Shop-built spools mean fewer hours of hot work on your site, consistent weld quality and safer, faster installations.</p>",
+			'bullets'  => "Pipe spool prefabrication\nHGG ProCutter 900 RB 3D pipe profiling\nNovarc robotic spool welding\nOrbital welding for sanitary and high-purity piping\nX-ray-standard specialty welding\nBIM-driven spool design",
 			'children' => array(
+				array( 'Pipe Spool Prefabrication', 'fabrication/fabrication-shop.jpg', 'Spools built in Quantum\'s 136,000 sq ft fabrication facility for faster, safer installations.' ),
+				array( 'Robotic Spool Welding', 'fabrication/novarc-swr.jpg', "Novarc SWR welding: 3\u{2013}5\u{00D7} faster on carbon steel and up to 12\u{00D7} on stainless." ),
 				array( 'Orbital Welding', 'services/orbital-welding.jpg', 'Repeatable, high-quality orbital welding services.' ),
 				array( 'Specialty Welding', 'services/specialty-welding.jpg', 'X-ray-standard welding services.' ),
 			),
@@ -124,10 +126,10 @@ return array(
 			'slug'      => 'service-maintenance',
 			'icon'      => 'service',
 			'image'     => 'services/pump-rooms.jpg',
-			'tagline'   => '24/7 emergency service and preventative maintenance plans.',
-			'excerpt'   => '24/7 emergency response and customized preventative maintenance plans for HVAC/R, plumbing, steam and process systems.',
-			'content'   => "<p>The systems we build are the systems we keep running. When something fails, our service team responds around the clock. Before it fails, our preventative maintenance plans catch problems early.</p>\n<h2>Proactive, not reactive</h2>\n<p>Planned maintenance costs far less than emergency repairs, reduces downtime and extends equipment life. We build each plan around your facility's equipment, operating schedule and regulatory requirements.</p>",
-			'bullets'   => "24/7 emergency response\nCustomized preventative maintenance plans\nHVAC/R service\nPlumbing service\nSteam, boiler and process system service",
+			'tagline'   => 'Superior service 24/7/365: emergency repairs and preventative maintenance.',
+			'excerpt'   => '24/7/365 emergency response and turnkey preventative maintenance for mechanical, HVAC, process, plumbing and medical gas systems.',
+			'content'   => "<p>The systems we build are the systems we keep running. Our trained experts have the technical knowledge to deliver integrated mechanical and plumbing solutions, and they respond around the clock when something fails.</p>\n<p>Following installation, our turnkey service and preventative maintenance contracts protect your investment, apply proactive care, and keep critical mechanical and plumbing systems performing without interruption for years. We're your partner for emergency repairs, preventive maintenance and system upgrades.</p>\n<h2>Assets &amp; solutions</h2>\n<div class=\"value-grid\">\n<div class=\"value-card\"><h3>Mechanical</h3><p>Boilers, chillers, hydronics, steam and condensate systems; evaporative coolers to air-cooled chillers; surgery center humidification and dehumidification; data center equipment; environmental chambers; refrigeration of all types; ice machines and walk-in coolers and freezers.</p></div>\n<div class=\"value-card\"><h3>HVAC &amp; hydronic</h3><p>Hydraulics, snow melt systems, cooling towers and air handlers.</p></div>\n<div class=\"value-card\"><h3>Process systems</h3><p>Water treatment and process water, reverse osmosis and polishing, sterilization and vacuum-jacketed piping, tempering and water for injection (WFI).</p></div>\n<div class=\"value-card\"><h3>Plumbing</h3><p>Water heaters and culinary systems, drainage and natural gas, water softeners and fixtures, backflow prevention and filtration.</p></div>\n<div class=\"value-card\"><h3>Medical gas &amp; equipment</h3><p>Medical gas distribution, cylinder manifolds, vacuum pumps and compressors, system verifications and shutdowns.</p></div>\n</div>",
+			'bullets'   => "24/7/365 emergency response\nTurnkey preventative maintenance contracts\nHVAC/R and refrigeration service\nPlumbing and medical gas service\nSteam, boiler and process system service\nSystem upgrades",
 			'emergency' => true,
 			'children'  => array(
 				array( '24/7 Emergency Service', 'services/plumbing-services.jpg', 'Around-the-clock response when a critical system goes down.' ),
@@ -146,6 +148,8 @@ return array(
 	'projects' => array(
 		array(
 			'title'    => 'Weber State Chiller Plant',
+			'lat'      => 41.1912,
+			'lng'      => -111.9448,
 			'image'    => 'projects/weber-state-chiller-plant.jpg',
 			'sectors'  => array( 'Central Plants & Energy', 'Higher Education' ),
 			'location' => 'Ogden',
@@ -157,6 +161,8 @@ return array(
 		),
 		array(
 			'title'    => 'USU Thermal Energy Storage Tank',
+			'lat'      => 41.7449,
+			'lng'      => -111.8068,
 			'image'    => 'projects/usu-thermal-energy-storage-tank.jpg',
 			'sectors'  => array( 'Central Plants & Energy', 'Higher Education' ),
 			'location' => 'Logan',
@@ -185,6 +191,8 @@ return array(
 		),
 		array(
 			'title'    => 'Logan Regional Budge Clinic',
+			'lat'      => 41.7555,
+			'lng'      => -111.8233,
 			'image'    => 'projects/logan-regional-budge-clinic.jpg',
 			'sectors'  => array( 'Healthcare & Medical' ),
 			'location' => 'Logan',
@@ -195,6 +203,8 @@ return array(
 		),
 		array(
 			'title'    => 'USU Caine Performance Hall',
+			'lat'      => 41.7399,
+			'lng'      => -111.8166,
 			'image'    => 'projects/usu-caine-performance-hall.jpg',
 			'sectors'  => array( 'Higher Education' ),
 			'location' => 'Logan',
@@ -205,6 +215,8 @@ return array(
 		),
 		array(
 			'title'    => 'Rio Tinto Kennecott Building',
+			'lat'      => 40.7672,
+			'lng'      => -111.8455,
 			'image'    => 'projects/rio-tinto-kennecott-building.jpg',
 			'sectors'  => array( 'Higher Education' ),
 			'location' => 'Salt Lake City',
@@ -224,6 +236,8 @@ return array(
 		),
 		array(
 			'title'    => 'USU Childhood Education and Research',
+			'lat'      => 41.7432,
+			'lng'      => -111.8186,
 			'image'    => 'projects/usu-childhood-education-and-research.jpg',
 			'sectors'  => array( 'Higher Education' ),
 			'location' => 'Logan',
@@ -234,6 +248,8 @@ return array(
 		),
 		array(
 			'title'    => 'Janicki',
+			'lat'      => 41.2068,
+			'lng'      => -112.0185,
 			'image'    => 'projects/janicki.jpg',
 			'sectors'  => array( 'Manufacturing & Industrial' ),
 			'location' => 'Ogden',
@@ -242,6 +258,8 @@ return array(
 		),
 		array(
 			'title'    => 'Ogden IRS Building',
+			'lat'      => 41.2218,
+			'lng'      => -111.9712,
 			'image'    => 'projects/ogden-irs-building.jpg',
 			'sectors'  => array( 'Commercial & Data Center' ),
 			'location' => 'Ogden',
@@ -251,6 +269,8 @@ return array(
 		),
 		array(
 			'title'    => '505 Wakara Way',
+			'lat'      => 40.7612,
+			'lng'      => -111.8333,
 			'image'    => 'projects/505-wakara-way.jpg',
 			'sectors'  => array( 'Commercial & Data Center' ),
 			'location' => 'Salt Lake City',
@@ -260,6 +280,8 @@ return array(
 		),
 		array(
 			'title'    => 'George E. Wahlen Ogden Veterans Home',
+			'lat'      => 41.2476,
+			'lng'      => -111.9872,
 			'image'    => 'projects/george-e-wahlen-ogden-veterans-home.jpg',
 			'sectors'  => array( 'Healthcare & Medical' ),
 			'location' => 'Ogden',
@@ -269,6 +291,8 @@ return array(
 		),
 		array(
 			'title'    => 'WSU Elizabeth Hall',
+			'lat'      => 41.1929,
+			'lng'      => -111.9425,
 			'image'    => 'projects/wsu-elizabeth-hall.jpg',
 			'sectors'  => array( 'Higher Education' ),
 			'location' => 'Ogden',
@@ -279,6 +303,8 @@ return array(
 		),
 		array(
 			'title'    => 'USU Maverik Stadium',
+			'lat'      => 41.7516,
+			'lng'      => -111.8114,
 			'image'    => 'projects/usu-maverick-stadium.jpg',
 			'sectors'  => array( 'Higher Education', 'Recreation & Athletics' ),
 			'location' => 'Logan',
@@ -288,6 +314,8 @@ return array(
 		),
 		array(
 			'title'    => 'USU College of Agriculture Utility Tunnel',
+			'lat'      => 41.7419,
+			'lng'      => -111.8131,
 			'image'    => 'projects/usu-college-of-ag-tunnel.jpg',
 			'sectors'  => array( 'Central Plants & Energy', 'Higher Education' ),
 			'location' => 'Logan',
@@ -303,6 +331,8 @@ return array(
 		),
 		array(
 			'title'    => 'University of Utah Guest House',
+			'lat'      => 40.7629,
+			'lng'      => -111.8385,
 			'image'    => 'projects/university-of-utah-guest-house.jpg',
 			'sectors'  => array( 'Higher Education' ),
 			'location' => 'Salt Lake City',

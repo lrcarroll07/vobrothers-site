@@ -37,6 +37,13 @@ add_action(
 		wp_enqueue_style( 'vob-fonts', 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap', array(), null );
 		wp_enqueue_style( 'vob-main', get_theme_file_uri( 'assets/css/main.css' ), array( 'vob-fonts' ), VOB_THEME_VERSION );
 		wp_enqueue_script( 'vob-main', get_theme_file_uri( 'assets/js/main.js' ), array(), VOB_THEME_VERSION, array( 'strategy' => 'defer' ) );
+
+		// Project map (Leaflet, bundled locally) only where it's used.
+		if ( is_post_type_archive( 'vob_project' ) || is_tax( array( 'vob_sector', 'vob_location' ) ) ) {
+			wp_enqueue_style( 'leaflet', get_theme_file_uri( 'assets/vendor/leaflet/leaflet.css' ), array(), '1.9.4' );
+			wp_enqueue_script( 'leaflet', get_theme_file_uri( 'assets/vendor/leaflet/leaflet.js' ), array(), '1.9.4', array( 'strategy' => 'defer' ) );
+			wp_enqueue_script( 'vob-project-map', get_theme_file_uri( 'assets/js/project-map.js' ), array( 'leaflet', 'vob-main' ), VOB_THEME_VERSION, array( 'strategy' => 'defer' ) );
+		}
 	}
 );
 

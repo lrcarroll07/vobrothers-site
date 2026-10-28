@@ -19,12 +19,18 @@ function vob_meta_fields() {
 			'vob_status'         => array( 'Status (Completed / Ongoing)', 'text' ),
 			'vob_featured'       => array( 'Feature on the home page carousel', 'checkbox' ),
 			'vob_gallery'        => array( 'Gallery image IDs (comma separated)', 'text' ),
+			'vob_lat'            => array( 'Map latitude (e.g. 41.1915)', 'text' ),
+			'vob_lng'            => array( 'Map longitude (e.g. -111.9445)', 'text' ),
 		),
 		'vob_service'     => array(
 			'vob_tagline'   => array( 'Short tagline shown on cards', 'text' ),
 			'vob_icon'      => array( 'Icon name (water, steam, medical, pipe, weld, gauge, wrench, service)', 'text' ),
 			'vob_bullets'   => array( 'Key points (one per line)', 'textarea' ),
 			'vob_emergency' => array( 'Show the 24/7 emergency call-out on this page', 'checkbox' ),
+		),
+		'vob_team'        => array(
+			'vob_role'  => array( 'Job title', 'text' ),
+			'vob_group' => array( 'Show in (utah / quantum)', 'text' ),
 		),
 		'vob_testimonial' => array(
 			'vob_person'   => array( 'Name', 'text' ),

@@ -23,6 +23,7 @@ require_once VOB_CORE_DIR . 'includes/meta.php';
 require_once VOB_CORE_DIR . 'includes/jobs.php';
 require_once VOB_CORE_DIR . 'includes/forms.php';
 require_once VOB_CORE_DIR . 'includes/testimonials.php';
+require_once VOB_CORE_DIR . 'includes/team.php';
 require_once VOB_CORE_DIR . 'includes/schema.php';
 require_once VOB_CORE_DIR . 'includes/redirects.php';
 require_once VOB_CORE_DIR . 'includes/preview.php';

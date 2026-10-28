@@ -37,18 +37,24 @@ node bin/screenshots.js   # optional: desktop + mobile screenshots into screensh
 
 ## Content still needed from VO Brothers
 
-Pages show yellow "Placeholder" notes where these go:
+Core values, safety, benefits, team testimonials, leadership and the fabrication facility now come from
+quantumindustrial.com (Crawford/Arizona material left out, except the fabrication facility). The only
+Utah-specific award there, ABC Utah Sub-Contractor of the Year 2020, is used. Still open (yellow
+"Placeholder" notes mark most of them):
 
-1. Awards, certifications and safety recognitions (home page, Safety page).
-2. Safety program details: the Safety page cards are drafted and must be confirmed.
-3. Core values: drafted from the old site's wording; confirm or replace.
-4. Client and employee testimonials (admin → Testimonials).
-5. Company history, leadership, licenses (About).
-6. Approved description of Quantum Industrial (About → Quantum Industrial).
-7. Careers benefits and a team photo.
-8. 4–8 high-resolution photos per project; longer descriptions for the 26 individual service pages.
-9. Confirm the **24/7 emergency number**. It's currently the main line, 866-722-1267.
-10. Confirm project locations marked only "Utah" (Xactware, Fresenius, Elkay, US Ski & Snowboard), and the full scope for the U of U Guest House (the old site's text was cut off).
+1. Client testimonials (admin → Testimonials, audience "client").
+2. Founding year and milestones (About).
+3. More awards or safety stats (EMR, OSHA rate), if any.
+4. 4–8 high-resolution photos per project; longer descriptions for the individual service pages.
+5. Confirm the **24/7 emergency number**. It's currently the main line, 866-722-1267.
+6. Confirm project locations marked only "Utah" (Xactware, Fresenius, Elkay, US Ski & Snowboard) so they can go on the map, and the full scope for the U of U Guest House.
+7. Map pins use approximate campus/street coordinates (edit Latitude/Longitude on each project).
+
+## Project map
+
+The Projects page shows every project with coordinates on an interactive map (Leaflet, bundled in the
+theme) over USGS shaded relief, which is public domain and needs no API key. The map follows the type
+and area filters; overlapping pins merge into a numbered bubble that zooms in, then lists its projects.
 
 ## Free preview in WordPress Playground
 

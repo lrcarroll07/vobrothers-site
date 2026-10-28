@@ -151,22 +151,52 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 	</div>
 </section>
 
+<section class="section fab-band" aria-labelledby="fab-title">
+	<?php
+	$fab_page = get_page_by_path( 'welding-fabrication', OBJECT, 'vob_service' );
+	if ( $fab_page && has_post_thumbnail( $fab_page ) ) {
+		echo get_the_post_thumbnail( $fab_page, 'vob-hero', array( 'class' => 'fab-band__bg', 'alt' => '', 'loading' => 'lazy' ) );
+	}
+	?>
+	<div class="container fab-band__inner">
+		<div>
+			<p class="eyebrow eyebrow--light">Prefabrication //</p>
+			<h2 class="section-title" id="fab-title">Built in the shop, faster in the field</h2>
+			<p>As a <?php echo esc_html( vob_t_info( 'parent_name' ) ); ?> company, VO Brothers projects can draw on Quantum's 136,000 sq ft pipe fabrication facility and its robotic cutting and welding equipment. Spools built under controlled shop conditions mean safer job sites, consistent welds and shorter schedules.</p>
+			<ul class="tag-list">
+				<li><a href="<?php echo esc_url( $fab_page ? get_permalink( $fab_page ) : home_url( '/services/' ) ); ?>">HGG ProCutter 900 RB</a></li>
+				<li><a href="<?php echo esc_url( $fab_page ? get_permalink( $fab_page ) : home_url( '/services/' ) ); ?>">Novarc Spool Welding Robot</a></li>
+				<li><a href="<?php echo esc_url( $fab_page ? get_permalink( $fab_page ) : home_url( '/services/' ) ); ?>">BIM-driven spool design</a></li>
+			</ul>
+			<a class="btn btn--primary" href="<?php echo esc_url( $fab_page ? get_permalink( $fab_page ) : home_url( '/services/' ) ); ?>">Fabrication &amp; welding</a>
+		</div>
+		<div class="fab-stats">
+			<div class="fab-stat"><strong>136,000<small> sq ft</small></strong><span>Quantum pipe fabrication facility</span></div>
+			<div class="fab-stat"><strong>3–12<small>×</small></strong><span>Faster pipe welding with the Novarc robot vs. manual</span></div>
+			<div class="fab-stat"><strong>7<small> min</small></strong><span>To weld 6″ Sch. 40 stainless (29 min by MIG)</span></div>
+			<div class="fab-stat"><strong>55<small> min</small></strong><span>To weld 30″ Sch. 40 stainless (2.75 hrs by MIG)</span></div>
+		</div>
+	</div>
+</section>
+
 <section class="section section--mist" aria-labelledby="awards-title">
 	<div class="container">
 		<div class="section-head">
 			<p class="eyebrow">Recognition //</p>
-			<h2 class="section-title" id="awards-title">Awards &amp; certifications</h2>
+			<h2 class="section-title" id="awards-title">Proven in Utah</h2>
 		</div>
-		<div class="award-grid">
-			<?php for ( $i = 0; $i < 4; $i++ ) : ?>
-				<div class="award placeholder-box">
-					<?php echo vob_icon( 'award' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
-					<strong>Award or certification</strong>
-					<span>Year &middot; Awarding organization</span>
+		<div class="recognition">
+			<div class="recognition__award">
+				<?php echo vob_icon( 'award' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+				<div>
+					<strong>Sub-Contractor of the Year</strong>
+					<span>Associated Builders and Contractors (ABC) of Utah &middot; 2020</span>
 				</div>
-			<?php endfor; ?>
+			</div>
+			<div class="recognition__item"><strong>Safety first</strong><span>A dedicated safety manager and a zero-incident goal on every site.</span></div>
+			<div class="recognition__item"><strong>Quantum backed</strong><span>Part of Quantum Industrial, with fabrication, training and resources to match.</span></div>
+			<div class="recognition__item"><strong>24/7/365</strong><span>Emergency service and preventative maintenance, around the clock.</span></div>
 		</div>
-		<p class="placeholder-note">Placeholder: VO Brothers to supply awards, safety recognitions and certifications.</p>
 	</div>
 </section>
 
@@ -174,8 +204,8 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 	<div class="container careers-band__inner">
 		<div>
 			<p class="eyebrow eyebrow--light">Careers //</p>
-			<h2 class="section-title" id="careers-title">A community of friends, teammates and talented mechanics</h2>
-			<p>We value performance, and we value our friendships. With the right team, magic happens. Grow your career with people who have your back.</p>
+			<h2 class="section-title" id="careers-title">We build people</h2>
+			<p>Developing and empowering our workforce is our most important mission. Competitive wages, real benefits, apprenticeships and a team that feels like family. One word our people use for it: brotherhood.</p>
 			<a class="btn btn--primary" href="<?php echo esc_url( home_url( '/careers/' ) ); ?>">
 				<?php echo is_array( $jobs ) && $jobs ? esc_html( sprintf( 'See %d open position%s', count( $jobs ), 1 === count( $jobs ) ? '' : 's' ) ) : 'See open positions'; ?>
 			</a>
@@ -195,7 +225,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 		<p class="parent-band__mark" aria-hidden="true">Q</p>
 		<div>
 			<h2 class="parent-band__title" id="parent-title">A <?php echo esc_html( vob_t_info( 'parent_name' ) ); ?> Company</h2>
-			<p>VO Brothers Mechanical is part of <?php echo esc_html( vob_t_info( 'parent_name' ) ); ?>. We operate under the VO Brothers name, with the same local team, from our shop in Ogden.</p>
+			<p>In 2024 VO Brothers Mechanical joined <?php echo esc_html( vob_t_info( 'parent_name' ) ); ?>, an industrial mechanical and plumbing contractor serving clients across the United States. We still operate as VO Brothers, with the same local team, from our shop in Ogden.</p>
 		</div>
 		<a class="btn btn--outline" href="<?php echo esc_url( home_url( '/about/quantum-industrial/' ) ); ?>">Learn more</a>
 	</div>
