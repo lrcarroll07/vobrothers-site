@@ -25,11 +25,16 @@ add_shortcode(
 		}
 		$out = '<ul class="team-grid">';
 		foreach ( $members as $member ) {
-			$out .= sprintf(
-				'<li class="team-card">%s<strong class="team-card__name">%s</strong><span class="team-card__role">%s</span></li>',
-				get_the_post_thumbnail( $member, 'medium', array( 'loading' => 'lazy', 'alt' => esc_attr( $member->post_title ) ) ),
+			// No headshot yet: show initials in the same square so the grid stays even.
+			$photo = has_post_thumbnail( $member )
+				? get_the_post_thumbnail( $member, 'medium', array( 'loading' => 'lazy', 'alt' => esc_attr( $member->post_title ) ) )
+				: '<span class="team-card__initials" aria-hidden="true">' . esc_html( implode( '', array_map( fn( $word ) => mb_substr( $word, 0, 1 ), array_slice( preg_split( '/\s+/', trim( $member->post_title ) ), 0, 2 ) ) ) ) . '</span>';
+			$role  = get_post_meta( $member->ID, 'vob_role', true );
+			$out  .= sprintf(
+				'<li class="team-card">%s<strong class="team-card__name">%s</strong>%s</li>',
+				$photo,
 				esc_html( $member->post_title ),
-				esc_html( get_post_meta( $member->ID, 'vob_role', true ) )
+				$role ? '<span class="team-card__role">' . esc_html( $role ) . '</span>' : ''
 			);
 		}
 		return $out . '</ul>';

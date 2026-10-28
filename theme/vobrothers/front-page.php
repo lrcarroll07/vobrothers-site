@@ -27,16 +27,16 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 	?>
 	<div class="container hero__inner">
 		<p class="eyebrow eyebrow--light">Mechanical &middot; Process Piping &middot; Plumbing &middot; Service</p>
-		<h1 class="hero__title">Determined<br>for <span>Progress</span></h1>
+		<h1 class="hero__title">We Build<br><span>People</span></h1>
 		<p class="hero__lead">VO Brothers Mechanical builds and services the systems that keep Utah's labs, hospitals, campuses and plants running, from pure water and clean steam to medical gas, chilled water and plumbing.</p>
 		<div class="hero__actions">
 			<a class="btn btn--primary btn--lg" href="<?php echo esc_url( home_url( '/contact/#vob-form-quote' ) ); ?>">Request a Quote</a>
 			<a class="btn btn--outline-light btn--lg" href="<?php echo esc_url( get_post_type_archive_link( 'vob_project' ) ); ?>">View Our Projects</a>
 		</div>
 	</div>
-	<a class="hero__emergency" href="<?php echo esc_attr( vob_t_tel( vob_t_info( 'emergency_phone' ) ) ); ?>">
+	<a class="hero__emergency" href="<?php echo esc_url( vob_emergency_url() ); ?>">
 		<span class="pulse" aria-hidden="true"></span>
-		<span>System down? <strong>24/7 emergency service: <?php echo esc_html( vob_t_info( 'emergency_phone' ) ); ?></strong></span>
+		<span>System down? <strong>24/7/365 emergency service</strong> &rarr;</span>
 	</a>
 </section>
 
@@ -145,7 +145,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 			</ul>
 			<div class="btn-row">
 				<a class="btn btn--primary" href="<?php echo esc_url( $service_page ? get_permalink( $service_page ) . '#vob-form-maintenance' : home_url( '/contact/' ) ); ?>">Get a Maintenance Plan</a>
-				<a class="btn btn--outline" href="<?php echo esc_attr( vob_t_tel( vob_t_info( 'emergency_phone' ) ) ); ?>">Call 24/7: <?php echo esc_html( vob_t_info( 'emergency_phone' ) ); ?></a>
+				<a class="btn btn--outline" href="<?php echo esc_url( vob_emergency_url() ); ?>">24/7 Emergency Service</a>
 			</div>
 		</div>
 	</div>
@@ -204,7 +204,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 	<div class="container careers-band__inner">
 		<div>
 			<p class="eyebrow eyebrow--light">Careers //</p>
-			<h2 class="section-title" id="careers-title">We build people</h2>
+			<h2 class="section-title" id="careers-title">Build your career with us</h2>
 			<p>Developing and empowering our workforce is our most important mission. Competitive wages, real benefits, apprenticeships and a team that feels like family. One word our people use for it: brotherhood.</p>
 			<a class="btn btn--primary" href="<?php echo esc_url( home_url( '/careers/' ) ); ?>">
 				<?php echo is_array( $jobs ) && $jobs ? esc_html( sprintf( 'See %d open position%s', count( $jobs ), 1 === count( $jobs ) ? '' : 's' ) ) : 'See open positions'; ?>

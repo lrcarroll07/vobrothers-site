@@ -65,6 +65,16 @@ function vob_t_info( $key ) {
 	return function_exists( 'vob_info' ) ? vob_info( $key ) : '';
 }
 
+/**
+ * The 24/7 emergency service page. Emergency mentions link here rather than to the
+ * phone line, so the service is advertised without promoting calls to the hotline.
+ */
+function vob_emergency_url() {
+	$page = get_page_by_path( 'service-maintenance/24-7-emergency-service', OBJECT, 'vob_service' )
+		?: get_page_by_path( 'service-maintenance', OBJECT, 'vob_service' );
+	return $page ? get_permalink( $page ) : home_url( '/services/' );
+}
+
 function vob_t_tel( $phone ) {
 	return 'tel:+1' . preg_replace( '/\D/', '', $phone );
 }

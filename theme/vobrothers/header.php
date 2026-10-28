@@ -17,9 +17,9 @@
 			<span class="topbar__parent-word">Company</span>
 		</a>
 		<div class="topbar__contact">
-			<a class="topbar__emergency" href="<?php echo esc_attr( vob_t_tel( vob_t_info( 'emergency_phone' ) ) ); ?>">
-				<?php echo vob_icon( 'phone', 'icon icon--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
-				<span>24/7 Emergency Service</span> <strong><?php echo esc_html( vob_t_info( 'emergency_phone' ) ); ?></strong>
+			<a class="topbar__emergency" href="<?php echo esc_url( vob_emergency_url() ); ?>">
+				<?php echo vob_icon( 'service', 'icon icon--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+				<strong>24/7 Emergency Service</strong>
 			</a>
 			<a class="topbar__email" href="mailto:<?php echo esc_attr( vob_t_info( 'email' ) ); ?>">
 				<?php echo vob_icon( 'mail', 'icon icon--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>

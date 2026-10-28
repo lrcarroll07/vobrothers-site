@@ -51,7 +51,6 @@ add_shortcode(
 			<?php if ( 'sent' === $status ) : ?>
 				<div class="notice notice--success" role="status">
 					<strong>Thanks, we've got it.</strong> A member of our team will be in touch shortly.
-					For emergencies call <a href="<?php echo esc_attr( vob_tel( vob_info( 'emergency_phone' ) ) ); ?>"><?php echo esc_html( vob_info( 'emergency_phone' ) ); ?></a>.
 				</div>
 			<?php else : ?>
 				<?php if ( 'error' === $status ) : ?>

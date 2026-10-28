@@ -34,7 +34,7 @@
 				<li><?php echo vob_icon( 'mail', 'icon icon--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 					<a href="mailto:<?php echo esc_attr( vob_t_info( 'email' ) ); ?>"><?php echo esc_html( vob_t_info( 'email' ) ); ?></a></li>
 			</ul>
-			<a class="btn btn--primary btn--sm" href="<?php echo esc_attr( vob_t_tel( vob_t_info( 'emergency_phone' ) ) ); ?>">24/7 Emergency: <?php echo esc_html( vob_t_info( 'emergency_phone' ) ); ?></a>
+			<a class="btn btn--primary btn--sm" href="<?php echo esc_url( vob_emergency_url() ); ?>">24/7 Emergency Service</a>
 		</div>
 
 		<div>

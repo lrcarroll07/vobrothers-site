@@ -20,7 +20,6 @@ function vob_info_fields() {
 		'state'           => array( 'State', 'UT' ),
 		'zip'             => array( 'ZIP', '84404' ),
 		'phone'           => array( 'Main phone', '866-722-1267' ),
-		'emergency_phone' => array( '24/7 emergency phone', '866-722-1267' ),
 		'email'           => array( 'Sales email', 'Sales@QuantumIndustrial.com' ),
 		'lead_email'      => array( 'Send form submissions to', 'Sales@QuantumIndustrial.com' ),
 		'rippling_board'  => array( 'Rippling job board slug', 'vo-brothers-mechanical' ),

@@ -24,10 +24,9 @@ $map_query = rawurlencode( vob_address_line() );
 		</div>
 
 		<aside class="contact__info">
-			<a class="emergency-callout emergency-callout--stack" href="<?php echo esc_attr( vob_t_tel( vob_t_info( 'emergency_phone' ) ) ); ?>">
+			<a class="emergency-callout" href="<?php echo esc_url( vob_emergency_url() ); ?>">
 				<span class="pulse" aria-hidden="true"></span>
-				<span><strong>24/7 emergency service</strong> Call any time, day or night.</span>
-				<strong class="emergency-callout__phone"><?php echo esc_html( vob_t_info( 'emergency_phone' ) ); ?></strong>
+				<span><strong>24/7/365 emergency service</strong> Our service team responds around the clock. Learn more &rarr;</span>
 			</a>
 
 			<div class="info-card">

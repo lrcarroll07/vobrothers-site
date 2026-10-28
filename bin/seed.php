@@ -204,6 +204,7 @@ $team = array(
 	array( 'Courtney Cannon', 'Senior Project Manager', 'team/courtney-cannon.jpg', 'utah' ),
 	array( 'Jordan Abbott', 'VDC/BIM Manager', 'team/jordan-abbott.jpg', 'utah' ),
 	array( 'Dennis Valdez', 'Safety Manager', 'team/dennis-valdez.jpg', 'utah' ),
+	array( 'Mel Stong', '', '', 'utah' ),
 	array( 'Mark Estep', 'CEO, Quantum Industrial', 'team/mark-estep.jpg', 'quantum' ),
 	array( 'Chris Potter', 'COO, Quantum Industrial', 'team/chris-potter.jpg', 'quantum' ),
 	array( 'Eric Voltin', 'VP of Operations, Quantum Industrial', 'team/eric-voltin.jpg', 'quantum' ),
@@ -220,7 +221,9 @@ foreach ( $team as $order => list( $name, $role, $photo, $group ) ) {
 			'meta_input'  => array( 'vob_role' => $role, 'vob_group' => $group ),
 		)
 	);
-	set_post_thumbnail( $member, vob_seed_image( $photo, $name ) );
+	if ( $photo ) {
+		set_post_thumbnail( $member, vob_seed_image( $photo, $name ) );
+	}
 }
 
 $quotes = array(

@@ -11,7 +11,7 @@
 		</div>
 		<div class="cta-band__actions">
 			<a class="btn btn--light" href="<?php echo esc_url( home_url( '/contact/#vob-form-quote' ) ); ?>">Request a Quote</a>
-			<a class="btn btn--outline-light" href="<?php echo esc_attr( vob_t_tel( vob_t_info( 'emergency_phone' ) ) ); ?>"><?php echo vob_icon( 'phone', 'icon icon--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput ?> <?php echo esc_html( vob_t_info( 'emergency_phone' ) ); ?></a>
+			<a class="btn btn--outline-light" href="<?php echo esc_url( vob_emergency_url() ); ?>">24/7 Emergency Service</a>
 		</div>
 	</div>
 </section>

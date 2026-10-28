@@ -572,6 +572,10 @@ p { margin: 0 0 1em; }
 .team-grid { list-style: none; padding: 0 !important; margin: 28px 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 24px; }
 .team-card { margin: 0 !important; text-align: center; }
 .team-card img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); border-bottom: 4px solid var(--red); margin-bottom: 12px; }
+.team-card__initials {
+	display: grid; place-items: center; width: 100%; aspect-ratio: 1; margin-bottom: 12px; border-radius: var(--radius);
+	background: var(--charcoal); border-bottom: 4px solid var(--red); color: var(--white); font: 700 56px var(--font-head); letter-spacing: .04em;
+}
 .team-card__name { display: block; font: 700 21px/1.15 var(--font-head); color: var(--ink); }
 .team-card__role { display: block; font-size: 14.5px; color: var(--steel); line-height: 1.4; }
 

@@ -29,11 +29,10 @@ vob_page_hero(
 	<div class="container detail">
 		<div class="detail__main">
 			<?php if ( $emergency ) : ?>
-				<a class="emergency-callout" href="<?php echo esc_attr( vob_t_tel( vob_t_info( 'emergency_phone' ) ) ); ?>">
+				<div class="emergency-callout">
 					<span class="pulse" aria-hidden="true"></span>
-					<span><strong>Need help now?</strong> Our emergency line is answered 24 hours a day, 7 days a week.</span>
-					<strong class="emergency-callout__phone"><?php echo esc_html( vob_t_info( 'emergency_phone' ) ); ?></strong>
-				</a>
+					<span><strong>24/7/365 emergency service</strong> Our service team responds around the clock, every day of the year.</span>
+				</div>
 			<?php endif; ?>
 
 			<div class="prose">
