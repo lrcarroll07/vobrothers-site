@@ -7,6 +7,7 @@ $post_id  = get_the_ID();
 $location = get_post_meta( $post_id, 'vob_location_label', true ) ?: 'Utah';
 $size     = get_post_meta( $post_id, 'vob_size', true );
 $status   = get_post_meta( $post_id, 'vob_status', true );
+$award    = get_post_meta( $post_id, 'vob_award', true );
 ?>
 <article class="project-card"
 	data-groups="<?php echo esc_attr( vob_term_slugs( $post_id, 'vob_sector' ) ); ?>"
@@ -14,7 +15,9 @@ $status   = get_post_meta( $post_id, 'vob_status', true );
 	<a class="project-card__link" href="<?php the_permalink(); ?>">
 		<div class="project-card__media">
 			<?php the_post_thumbnail( 'vob-card', array( 'loading' => 'lazy', 'alt' => '' ) ); ?>
-			<?php if ( 'Ongoing' === $status ) : ?>
+			<?php if ( $award ) : ?>
+				<span class="badge badge--award"><?php echo vob_icon( 'award', 'icon icon--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput ?> Award winner</span>
+			<?php elseif ( 'Ongoing' === $status ) : ?>
 				<span class="badge">Ongoing</span>
 			<?php endif; ?>
 		</div>

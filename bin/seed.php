@@ -155,6 +155,7 @@ foreach ( $data['projects'] as $order => $project ) {
 				'vob_featured'       => empty( $project['featured'] ) ? '' : '1',
 				'vob_lat'            => (string) ( $project['lat'] ?? '' ),
 				'vob_lng'            => (string) ( $project['lng'] ?? '' ),
+				'vob_award'          => $project['award'] ?? '',
 			),
 		)
 	);
@@ -162,7 +163,12 @@ foreach ( $data['projects'] as $order => $project ) {
 	if ( ! empty( $project['location'] ) ) {
 		wp_set_object_terms( $id, $project['location'], 'vob_location' );
 	}
-	set_post_thumbnail( $id, vob_seed_image( $project['image'], $project['title'] ) );
+	$image = vob_seed_image( $project['image'], $project['title'] );
+	set_post_thumbnail( $id, $image );
+	if ( ! empty( $project['placeholder'] ) ) {
+		// "Photos coming soon" graphic: shown on cards, but not as the page hero.
+		update_post_meta( $image, '_vob_placeholder', '1' );
+	}
 }
 
 // Pages ------------------------------------------------------------------------

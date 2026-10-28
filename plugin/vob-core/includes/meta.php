@@ -18,6 +18,7 @@ function vob_meta_fields() {
 			'vob_scope'          => array( 'VO Brothers scope', 'textarea' ),
 			'vob_status'         => array( 'Status (Completed / Ongoing)', 'text' ),
 			'vob_featured'       => array( 'Feature on the home page carousel', 'checkbox' ),
+			'vob_award'          => array( 'Award (e.g. "Most Outstanding Water Project, Utah Construction + Design 2025")', 'text' ),
 			'vob_gallery'        => array( 'Gallery image IDs (comma separated)', 'text' ),
 			'vob_lat'            => array( 'Map latitude (e.g. 41.1915)', 'text' ),
 			'vob_lng'            => array( 'Map longitude (e.g. -111.9445)', 'text' ),

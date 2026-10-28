@@ -13,6 +13,7 @@ $facts    = array(
 	'Size'     => get_post_meta( $post_id, 'vob_size', true ),
 	'Owner'    => get_post_meta( $post_id, 'vob_client', true ),
 	'Status'   => get_post_meta( $post_id, 'vob_status', true ),
+	'Award'    => get_post_meta( $post_id, 'vob_award', true ),
 );
 $scope    = get_post_meta( $post_id, 'vob_scope', true );
 $gallery  = vob_project_gallery( $post_id );
@@ -31,7 +32,7 @@ vob_page_hero(
 	array(
 		'title'    => get_the_title(),
 		'eyebrow'  => vob_project_sectors( $post_id ),
-		'image_id' => get_post_thumbnail_id(),
+		'image_id' => get_post_meta( get_post_thumbnail_id(), '_vob_placeholder', true ) ? 0 : get_post_thumbnail_id(),
 	)
 );
 ?>

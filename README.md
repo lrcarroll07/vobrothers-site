@@ -49,6 +49,8 @@ Utah-specific award there, ABC Utah Sub-Contractor of the Year 2020, is used. St
 5. Confirm the **24/7 emergency number**. It's currently the main line, 866-722-1267.
 6. Confirm project locations marked only "Utah" (Xactware, Fresenius, Elkay, US Ski & Snowboard) so they can go on the map, and the full scope for the U of U Guest House.
 7. Map pins use approximate campus/street coordinates (edit Latitude/Longitude on each project).
+8. Photos for the three newsletter projects (Provo Wastewater Reclamation Facility, Davis Aqueduct Reach 1, Schreiber EQ Wastewater); they use "photos coming soon" placeholders. Confirm Schreiber's city so it can go on the map.
+9. Address of the second VO Brothers location (mentioned in Quantum's Utah newsletter, no address given).
 
 ## Project map
 

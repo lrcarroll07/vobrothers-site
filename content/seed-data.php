@@ -142,10 +142,47 @@ return array(
 	// ------------------------------------------------------------------
 	// Projects. sectors/location map to the filter taxonomies.
 	// ------------------------------------------------------------------
-	'sector_terms'   => array( 'Higher Education', 'Healthcare & Medical', 'Manufacturing & Industrial', 'Commercial & Data Center', 'Central Plants & Energy', 'Recreation & Athletics' ),
-	'location_terms' => array( 'Logan', 'Ogden', 'Salt Lake City' ),
+	'sector_terms'   => array( 'Higher Education', 'Healthcare & Medical', 'Manufacturing & Industrial', 'Water & Wastewater', 'Commercial & Data Center', 'Central Plants & Energy', 'Recreation & Athletics' ),
+	'location_terms' => array( 'Logan', 'Ogden', 'Davis County', 'Salt Lake City', 'Provo' ),
 
 	'projects' => array(
+		// From Quantum Industrial's Utah newsletter (2025–26). Photos are placeholders.
+		array(
+			'title'    => 'Provo Wastewater Reclamation Facility',
+			'lat'      => 40.2122,
+			'lng'      => -111.6436,
+			'image'    => 'projects/provo-wastewater-reclamation-facility.jpg',
+			'placeholder' => true,
+			'sectors'  => array( 'Water & Wastewater' ),
+			'location' => 'Provo',
+			'label'    => 'Provo, Utah',
+			'award'    => 'Most Outstanding Specialty Contracting Project, Utah Construction + Design 2025',
+			'content'  => 'Recognized by Utah Construction + Design as the Most Outstanding Specialty Contracting Project of 2025.',
+			'scope'    => 'Plumbing contractor.',
+		),
+		array(
+			'title'    => 'Davis Aqueduct Reach 1 Parallel Pipeline',
+			'lat'      => 41.1355,
+			'lng'      => -111.9245,
+			'image'    => 'projects/davis-aqueduct-reach-1-parallel-pipeline.jpg',
+			'placeholder' => true,
+			'sectors'  => array( 'Water & Wastewater' ),
+			'location' => 'Davis County',
+			'label'    => 'Davis County, Utah',
+			'award'    => 'Most Outstanding Water Project, Utah Construction + Design 2025',
+			'content'  => 'Recognized by Utah Construction + Design as the Most Outstanding Water Project of 2025.',
+			'scope'    => 'Plumbing contractor.',
+		),
+		array(
+			'title'    => 'Schreiber EQ Wastewater',
+			'image'    => 'projects/schreiber-eq-wastewater.jpg',
+			'placeholder' => true,
+			'sectors'  => array( 'Water & Wastewater', 'Manufacturing & Industrial' ),
+			'size'     => '80% prefabricated',
+			'client'   => 'Schreiber Foods',
+			'content'  => 'As a food manufacturer, Schreiber must treat its discarded water mixture to meet city codes before it can flow into other waste lines. VO Brothers built a system that meets those requirements through chemical and aeration separation treatment, so the discarded water flows into city lines without issue. Design to completion took one year, wrapping up in January 2026.',
+			'scope'    => 'Jason Wilson and his team used BIM, based on JUB Engineering\'s Navisworks model, to create prefabrication drawings. 80% of the work was prefabricated in our Ogden shop, in stainless steel from 16″ down to ½″ and every size in between.',
+		),
 		array(
 			'title'    => 'Weber State Chiller Plant',
 			'lat'      => 41.1912,

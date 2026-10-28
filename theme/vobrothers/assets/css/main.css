@@ -236,6 +236,7 @@ p { margin: 0 0 1em; }
 .project-card__link:hover .project-card__title { color: var(--red); }
 .project-card__meta { margin: 0; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 15px; color: var(--steel); }
 .project-card__meta span + span::before { content: "•"; margin-right: 16px; color: var(--line); }
+.badge--award { display: inline-flex; align-items: center; gap: 6px; background: var(--red) !important; }
 .badge {
 	position: absolute; top: 14px; left: 14px; background: var(--blue); color: var(--white);
 	font: 600 13px var(--font-head); letter-spacing: .12em; text-transform: uppercase; padding: 5px 10px; border-radius: 2px;
