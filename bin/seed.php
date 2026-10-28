@@ -273,9 +273,11 @@ foreach ( $data['awards'] as $order => list( $name, $project, $issuer, $year, $k
 }
 
 // About page: award summary linking to the full Awards page.
-$award_total  = count( $data['awards'] );
-$award_safety = count( array_filter( $data['awards'], fn( $a ) => 'safety' === $a[4] ) );
-$abc_award    = '<div class="award-callout">' . vob_icon_markup( 'award' ) . '<div><strong>' . $award_total . ' industry awards since 2018</strong><br>Including ' . $award_safety . ' safety awards, ABC Excellence in Construction awards, and Utah Construction &amp; Design honors for our 2025 Davis Aqueduct, Provo Wastewater and Schreiber Foods projects. <a href="' . esc_url( home_url( '/about/awards/' ) ) . '">See all awards</a></div></div>';
+// Award lists show 2020 onward (Settings → VO Brothers); older ones stay on their projects.
+$listed       = array_filter( $data['awards'], fn( $a ) => (int) $a[3] >= 2020 );
+$award_total  = count( $listed );
+$award_safety = count( array_filter( $listed, fn( $a ) => 'safety' === $a[4] ) );
+$abc_award    = '<div class="award-callout">' . vob_icon_markup( 'award' ) . '<div><strong>' . $award_total . ' industry awards since 2020</strong><br>Including ' . $award_safety . ' safety awards, ABC Excellence in Construction awards, and Utah Construction &amp; Design honors for our 2025 Davis Aqueduct, Provo Wastewater and Schreiber Foods projects. <a href="' . esc_url( home_url( '/about/awards/' ) ) . '">See all awards</a></div></div>';
 
 $about_image = vob_seed_image( 'site/about.jpg', 'The VO Brothers Mechanical team' );
 $about       = vob_seed_page(
@@ -322,7 +324,7 @@ vob_seed_page(
 <p>Safety shapes everything we do, from the office to the field. Our reputation rests on how our people work, and keeping safety first produces the best outcome for our team and our clients.</p>
 <p>Our Utah safety program is led by <strong>Dennis Valdez, Safety Manager</strong>.</p>
 <h2>Safety recognition</h2>
-<p>Our safety program has earned recognition year after year, including ABC\'s STEP awards (Safety Training and Evaluation Process) at Silver, Platinum and Diamond levels, the Annual Workplace Safety Award from the Utah Labor Commission and ABC, and ENR Mountain States\' Excellence in Safety award for the Primary Children\'s Hospital surgical expansion.</p>
+<p>Our safety program has earned recognition year after year, including ABC\'s STEP awards (Safety Training and Evaluation Process) at Silver, Platinum and Diamond levels and the Annual Workplace Safety Award from the Utah Labor Commission and ABC.</p>
 [vob_awards kind="safety" layout="list"]',
 	array( 'post_parent' => $about, 'menu_order' => 2, 'post_excerpt' => 'Committed to zero incidents and a zero-injury workforce.' )
 );
@@ -330,7 +332,7 @@ vob_seed_page(
 vob_seed_page(
 	'Awards',
 	'awards',
-	'<p class="lead">Year after year, our work and our safety record have been recognized by Associated Builders and Contractors, the Utah Labor Commission, Utah Construction &amp; Design, ENR Mountain States and Pulse of the City News.</p>
+	'<p class="lead">Year after year, our work and our safety record have been recognized by Associated Builders and Contractors, the Utah Labor Commission, Utah Construction &amp; Design and Pulse of the City News.</p>
 [vob_award_stats]
 [vob_awards]',
 	array( 'post_parent' => $about, 'menu_order' => 3, 'post_excerpt' => 'Recognized for construction excellence and safety across Utah.' )

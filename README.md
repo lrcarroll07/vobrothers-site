@@ -44,7 +44,7 @@ Utah-specific award there, ABC Utah Sub-Contractor of the Year 2020, is used. St
 
 1. Client testimonials (admin → Testimonials, audience "client").
 2. Founding year and milestones (About).
-3. Safety stats (EMR, OSHA rate), if you want them published. Awards are managed under **Awards** in the admin (23 listed); add new ones there and every page updates.
+3. Safety stats (EMR, OSHA rate), if you want them published. Awards are managed under **Awards** in the admin (23 stored; lists show 2020 onward, set under Settings → VO Brothers); add new ones there and every page updates.
 4. 4–8 high-resolution photos per project; longer descriptions for the individual service pages.
 5. Confirm the **24/7 emergency number**. It's currently the main line, 866-722-1267.
 6. Confirm project locations marked only "Utah" (Xactware, Fresenius, Elkay, US Ski & Snowboard) so they can go on the map, and the full scope for the U of U Guest House.

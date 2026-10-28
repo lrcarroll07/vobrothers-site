@@ -46,7 +46,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 		<div class="proof__item"><strong>4,900<small> tons</small></strong><span>Central chiller plant at Weber State</span></div>
 		<div class="proof__item"><strong>2M<small> gallons</small></strong><span>Thermal energy storage tank at Utah State</span></div>
 		<?php $award_count = function_exists( 'vob_awards' ) ? count( vob_awards() ) : 0; ?>
-		<div class="proof__item"><strong><?php echo (int) $award_count; ?></strong><span>Industry &amp; safety awards since 2018</span></div>
+		<div class="proof__item"><strong><?php echo (int) $award_count; ?></strong><span>Industry &amp; safety awards since <?php echo function_exists( 'vob_awards_since' ) ? (int) vob_awards_since() : 2020; ?></span></div>
 		<div class="proof__item"><strong>24/7</strong><span>Emergency service &amp; maintenance plans</span></div>
 	</div>
 </section>
@@ -204,12 +204,11 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 		</div>
 		<?php
 		$all_awards = function_exists( 'vob_awards' ) ? vob_awards() : array();
-		$years      = array_filter( array_map( 'intval', array_column( $all_awards, 'year' ) ) );
 		$safety     = array_filter( $all_awards, fn( $a ) => 'safety' === $a['kind'] );
 		?>
 		<div class="recognition">
-			<div class="recognition__item recognition__item--stat"><strong><?php echo count( $all_awards ); ?></strong><span>Industry awards since <?php echo esc_html( $years ? min( $years ) : '' ); ?></span></div>
-			<div class="recognition__item recognition__item--stat"><strong><?php echo count( $safety ); ?></strong><span>Safety awards from ABC, the Utah Labor Commission and ENR Mountain States</span></div>
+			<div class="recognition__item recognition__item--stat"><strong><?php echo count( $all_awards ); ?></strong><span>Industry awards since <?php echo (int) vob_awards_since(); ?></span></div>
+			<div class="recognition__item recognition__item--stat"><strong><?php echo count( $safety ); ?></strong><span>Safety awards from ABC and the Utah Labor Commission, including STEP Diamond</span></div>
 			<div class="recognition__item recognition__item--stat"><strong><?php echo count( $all_awards ) - count( $safety ); ?></strong><span>Excellence and project awards, including three from Utah Construction &amp; Design in 2025</span></div>
 		</div>
 		<?php if ( $all_awards ) : ?>

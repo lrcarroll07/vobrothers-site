@@ -2,6 +2,9 @@
 /**
  * Awards, managed under Awards in the admin.
  *
+ * Only awards from Settings → VO Brothers → "Show awards from" (default 2020) onward
+ * are listed; older ones stay in the admin, and on their projects' award badges.
+ *
  * vob_awards( $kind ) returns them newest first; [vob_awards kind="safety|project"
  * layout="timeline|list"] renders them. "Kind" separates safety awards (ABC STEP,
  * Utah Labor Commission) from project awards (Excellence in Construction, UC+D).
@@ -33,8 +36,17 @@ function vob_awards( $kind = '' ) {
 		),
 		get_posts( $args )
 	);
+	$since  = vob_awards_since();
+	$awards = array_values( array_filter( $awards, fn( $a ) => (int) $a['year'] >= $since ) );
 	usort( $awards, fn( $a, $b ) => (int) $b['year'] <=> (int) $a['year'] );
 	return $awards;
+}
+
+/**
+ * First year shown in award lists.
+ */
+function vob_awards_since() {
+	return (int) vob_info( 'awards_since' ) ?: 2020;
 }
 
 /**
@@ -89,12 +101,11 @@ add_shortcode(
 	'vob_award_stats',
 	function () {
 		$all    = vob_awards();
-		$years  = array_filter( array_map( 'intval', array_column( $all, 'year' ) ) );
 		$safety = count( array_filter( $all, fn( $a ) => 'safety' === $a['kind'] ) );
 		return sprintf(
-			'<div class="award-stats"><div><strong>%d</strong><span>Industry awards since %d</span></div><div><strong>%d</strong><span>Safety awards from ABC, the Utah Labor Commission and ENR Mountain States</span></div><div><strong>%d</strong><span>Excellence and project awards</span></div></div>',
+			'<div class="award-stats"><div><strong>%d</strong><span>Industry awards since %d</span></div><div><strong>%d</strong><span>Safety awards from ABC and the Utah Labor Commission</span></div><div><strong>%d</strong><span>Excellence and project awards</span></div></div>',
 			count( $all ),
-			$years ? min( $years ) : (int) wp_date( 'Y' ),
+			vob_awards_since(),
 			$safety,
 			count( $all ) - $safety
 		);
