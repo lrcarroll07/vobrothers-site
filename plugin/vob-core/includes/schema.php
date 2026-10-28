@@ -32,6 +32,21 @@ add_action(
 					'addressCountry'  => 'US',
 				),
 				'areaServed'         => array( '@type' => 'State', 'name' => 'Utah' ),
+				'department'         => array_map(
+					fn( $location ) => array(
+						'@type'   => 'LocalBusiness',
+						'name'    => vob_info( 'company_name' ) . ' — ' . $location['label'],
+						'address' => array(
+							'@type'           => 'PostalAddress',
+							'streetAddress'   => $location['street'],
+							'addressLocality' => $location['city'],
+							'addressRegion'   => $location['state'],
+							'postalCode'      => $location['zip'],
+							'addressCountry'  => 'US',
+						),
+					),
+					array_slice( vob_locations(), 1 )
+				),
 				'openingHoursSpecification' => array(
 					'@type'     => 'OpeningHoursSpecification',
 					'dayOfWeek' => array( 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ),

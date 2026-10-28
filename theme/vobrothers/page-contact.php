@@ -33,8 +33,10 @@ $map_query = rawurlencode( vob_address_line() );
 				<h2 class="info-card__title"><?php echo esc_html( vob_t_info( 'company_name' ) ); ?></h2>
 				<p class="info-card__sub">A <?php echo esc_html( vob_t_info( 'parent_name' ) ); ?> Company</p>
 				<ul class="site-footer__contact">
-					<li><?php echo vob_icon( 'pin', 'icon icon--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
-						<span><?php echo esc_html( vob_t_info( 'street' ) ); ?><br><?php echo esc_html( vob_t_info( 'city' ) . ', ' . vob_t_info( 'state' ) . ' ' . vob_t_info( 'zip' ) ); ?></span></li>
+					<?php foreach ( vob_t_locations() as $location ) : ?>
+						<li><?php echo vob_icon( 'pin', 'icon icon--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+							<span><?php if ( count( vob_t_locations() ) > 1 ) : ?><strong class="address-label"><?php echo esc_html( $location['label'] ); ?></strong><br><?php endif; ?><?php echo esc_html( $location['street'] ); ?><br><?php echo esc_html( $location['city'] . ', ' . $location['state'] . ' ' . $location['zip'] ); ?></span></li>
+					<?php endforeach; ?>
 					<li><?php echo vob_icon( 'phone', 'icon icon--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 						<a href="<?php echo esc_attr( vob_t_tel( vob_t_info( 'phone' ) ) ); ?>"><?php echo esc_html( vob_t_info( 'phone' ) ); ?></a></li>
 					<li><?php echo vob_icon( 'mail', 'icon icon--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>

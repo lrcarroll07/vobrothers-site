@@ -523,6 +523,8 @@ p { margin: 0 0 1em; }
 .site-footer__contact { list-style: none; margin: 0 0 16px; padding: 0; }
 .site-footer__contact li { display: flex; gap: 10px; padding: 5px 0; }
 .site-footer__contact .icon { color: var(--red); margin-top: 4px; }
+.address-label { font-weight: 600; color: var(--white); }
+.info-card .address-label { color: var(--ink); }
 .social { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; }
 .social a { display: inline-block; padding: 6px 12px; border: 1px solid rgba(255,255,255,.15); border-radius: 2px; font-size: 14px; }
 .social a:hover { border-color: var(--red); }

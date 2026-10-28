@@ -75,6 +75,10 @@ function vob_emergency_url() {
 	return $page ? get_permalink( $page ) : home_url( '/services/' );
 }
 
+function vob_t_locations() {
+	return function_exists( 'vob_locations' ) ? vob_locations() : array();
+}
+
 function vob_t_tel( $phone ) {
 	return 'tel:+1' . preg_replace( '/\D/', '', $phone );
 }

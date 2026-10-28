@@ -175,6 +175,10 @@ return array(
 		),
 		array(
 			'title'    => 'Schreiber EQ Wastewater',
+			'lat'      => 41.7468,
+			'lng'      => -111.8617,
+			'location' => 'Logan',
+			'label'    => 'Logan, Utah',
 			'image'    => 'projects/schreiber-eq-wastewater.jpg',
 			'placeholder' => true,
 			'sectors'  => array( 'Water & Wastewater', 'Manufacturing & Industrial' ),

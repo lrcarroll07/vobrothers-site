@@ -19,6 +19,11 @@ function vob_info_fields() {
 		'city'            => array( 'City', 'Ogden' ),
 		'state'           => array( 'State', 'UT' ),
 		'zip'             => array( 'ZIP', '84404' ),
+		'label2'          => array( 'Second location: name', 'Service location' ),
+		'street2'         => array( 'Second location: street (leave blank to hide)', '1572 S. 1100 W.' ),
+		'city2'           => array( 'Second location: city', 'Ogden' ),
+		'state2'          => array( 'Second location: state', 'UT' ),
+		'zip2'            => array( 'Second location: ZIP', '84404' ),
 		'phone'           => array( 'Main phone', '866-722-1267' ),
 		'email'           => array( 'Sales email', 'Sales@QuantumIndustrial.com' ),
 		'lead_email'      => array( 'Send form submissions to', 'Sales@QuantumIndustrial.com' ),
@@ -48,6 +53,32 @@ function vob_info( $key ) {
  */
 function vob_tel( $phone ) {
 	return 'tel:+1' . preg_replace( '/\D/', '', $phone );
+}
+
+/**
+ * Company locations for the footer, Contact page and schema:
+ * [ ['label','street','city','state','zip'], ... ]. The second appears once its street is set.
+ */
+function vob_locations() {
+	$locations = array(
+		array(
+			'label'  => 'Main office & shop',
+			'street' => vob_info( 'street' ),
+			'city'   => vob_info( 'city' ),
+			'state'  => vob_info( 'state' ),
+			'zip'    => vob_info( 'zip' ),
+		),
+	);
+	if ( vob_info( 'street2' ) ) {
+		$locations[] = array(
+			'label'  => vob_info( 'label2' ),
+			'street' => vob_info( 'street2' ),
+			'city'   => vob_info( 'city2' ),
+			'state'  => vob_info( 'state2' ),
+			'zip'    => vob_info( 'zip2' ),
+		);
+	}
+	return $locations;
 }
 
 /**
