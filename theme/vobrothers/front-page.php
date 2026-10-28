@@ -185,14 +185,28 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 			<p class="eyebrow">Recognition //</p>
 			<h2 class="section-title" id="awards-title">Proven in Utah</h2>
 		</div>
-		<div class="recognition">
-			<div class="recognition__award">
-				<?php echo vob_icon( 'award' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
-				<div>
-					<strong>Sub-Contractor of the Year</strong>
-					<span>Associated Builders and Contractors (ABC) of Utah &middot; 2020</span>
+		<div class="award-row">
+			<?php
+			$awards = array(
+				array( 'Most Outstanding Specialty Contracting Project', 'Utah Construction + Design', '2025', 'Provo Wastewater Reclamation Facility' ),
+				array( 'Most Outstanding Water Project', 'Utah Construction + Design', '2025', 'Davis Aqueduct Reach 1 Parallel Pipeline' ),
+				array( 'Sub-Contractor of the Year', 'Associated Builders and Contractors of Utah', '2020', '' ),
+			);
+			foreach ( $awards as list( $award, $org, $year, $project ) ) :
+				?>
+				<div class="recognition__award">
+					<?php echo vob_icon( 'award' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+					<div>
+						<strong><?php echo esc_html( $award ); ?></strong>
+						<span><?php echo esc_html( $org . ' · ' . $year ); ?></span>
+						<?php if ( $project ) : ?>
+							<em><?php echo esc_html( $project ); ?></em>
+						<?php endif; ?>
+					</div>
 				</div>
-			</div>
+			<?php endforeach; ?>
+		</div>
+		<div class="recognition">
 			<div class="recognition__item"><strong>Safety first</strong><span>A dedicated safety manager and a zero-incident goal on every site.</span></div>
 			<div class="recognition__item"><strong>Quantum backed</strong><span>Part of Quantum Industrial, with fabrication, training and resources to match.</span></div>
 			<div class="recognition__item"><strong>24/7/365</strong><span>Emergency service and preventative maintenance, around the clock.</span></div>

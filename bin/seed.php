@@ -204,7 +204,7 @@ $team = array(
 	array( 'Courtney Cannon', 'Senior Project Manager', 'team/courtney-cannon.jpg', 'utah' ),
 	array( 'Jordan Abbott', 'VDC/BIM Manager', 'team/jordan-abbott.jpg', 'utah' ),
 	array( 'Dennis Valdez', 'Safety Manager', 'team/dennis-valdez.jpg', 'utah' ),
-	array( 'Mel Stong', '', '', 'utah' ),
+	array( 'Melody Stong', 'Business Development', 'team/melody-stong.jpg', 'utah' ),
 	array( 'Mark Estep', 'CEO, Quantum Industrial', 'team/mark-estep.jpg', 'quantum' ),
 	array( 'Chris Potter', 'COO, Quantum Industrial', 'team/chris-potter.jpg', 'quantum' ),
 	array( 'Eric Voltin', 'VP of Operations, Quantum Industrial', 'team/eric-voltin.jpg', 'quantum' ),
@@ -247,7 +247,10 @@ foreach ( $quotes as $order => $quote ) {
 	);
 }
 
-$abc_award = '<div class="award-callout">' . vob_icon_markup( 'award' ) . '<div><strong>ABC Utah Sub-Contractor of the Year</strong><br>Associated Builders and Contractors of Utah, 2020</div></div>';
+// Utah awards: ABC Utah (2020) and Utah Construction + Design "Most Outstanding Projects of 2025".
+$abc_award = '<div class="award-callout">' . vob_icon_markup( 'award' ) . '<div><strong>Most Outstanding Specialty Contracting Project</strong><br>Utah Construction + Design, 2025 &middot; Provo Wastewater Reclamation Facility (plumbing contractor)</div></div>'
+	. '<div class="award-callout">' . vob_icon_markup( 'award' ) . '<div><strong>Most Outstanding Water Project</strong><br>Utah Construction + Design, 2025 &middot; Davis Aqueduct Reach 1 Parallel Pipeline (plumbing contractor)</div></div>'
+	. '<div class="award-callout">' . vob_icon_markup( 'award' ) . '<div><strong>ABC Utah Sub-Contractor of the Year</strong><br>Associated Builders and Contractors of Utah, 2020</div></div>';
 
 $about_image = vob_seed_image( 'site/about.jpg', 'The VO Brothers Mechanical team' );
 $about       = vob_seed_page(

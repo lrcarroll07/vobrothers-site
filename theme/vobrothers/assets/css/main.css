@@ -604,13 +604,17 @@ p { margin: 0 0 1em; }
 
 /* Recognition ------------------------------------------------------------ */
 
-.recognition { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 20px; }
+.award-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px; }
+.recognition { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .recognition__award {
 	display: flex; gap: 20px; align-items: center; padding: 28px; background: var(--white); border-top: 5px solid var(--red); box-shadow: var(--shadow);
 }
 .recognition__award .icon { width: 56px; height: 56px; color: var(--red); flex: none; }
-.recognition__award strong { display: block; font: 700 26px/1.1 var(--font-head); color: var(--ink); text-transform: uppercase; }
-.recognition__award span { color: var(--steel); }
+.recognition__award { align-items: flex-start; }
+.recognition__award .icon { width: 48px; height: 48px; }
+.recognition__award strong { display: block; font: 700 23px/1.1 var(--font-head); color: var(--ink); text-transform: uppercase; margin-bottom: 6px; }
+.recognition__award span { display: block; color: var(--steel); font-size: 15px; }
+.recognition__award em { display: block; margin-top: 4px; font-style: normal; font-weight: 600; color: var(--red); font-size: 15px; }
 .recognition__item { padding: 28px 24px; background: var(--white); border-top: 5px solid var(--charcoal); }
 .recognition__item strong { display: block; font: 700 22px/1.1 var(--font-head); color: var(--ink); margin-bottom: 6px; }
 .recognition__item span { font-size: 15px; color: var(--steel); }
@@ -619,12 +623,12 @@ p { margin: 0 0 1em; }
 
 @media (max-width: 1024px) {
 	.fab-band__inner { grid-template-columns: 1fr; }
+	.award-row { grid-template-columns: 1fr; }
 	.recognition { grid-template-columns: 1fr 1fr; }
-	.recognition__award { grid-column: 1 / -1; }
 	.benefit-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
-	.recognition, .benefit-grid, .fab-stats { grid-template-columns: 1fr; }
+	.recognition, .award-row, .benefit-grid, .fab-stats { grid-template-columns: 1fr; }
 	.team-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
 	.team-card__name { font-size: 18px; }
 }
