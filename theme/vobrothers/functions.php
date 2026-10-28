@@ -179,7 +179,7 @@ add_filter(
  * a scheme and remembers it for the visit (cookie), without changing the setting.
  */
 function vob_palette() {
-	$allowed = array( 'vo', 'family' );
+	$allowed = array( 'vo', 'family', 'quantum' );
 	if ( isset( $_GET['palette'] ) && in_array( $_GET['palette'], $allowed, true ) ) {
 		$palette = sanitize_key( $_GET['palette'] );
 		if ( ! headers_sent() ) {
@@ -214,8 +214,9 @@ add_action(
 		}
 		$current = vob_palette();
 		$options = array(
-			'vo'     => 'VO red',
-			'family' => 'VO + Quantum blue',
+			'vo'      => 'VO red',
+			'family'  => 'VO + Quantum blue',
+			'quantum' => 'Full Quantum',
 		);
 		echo '<nav class="palette-switch" aria-label="Preview color scheme"><span>Colors</span>';
 		foreach ( $options as $key => $label ) {

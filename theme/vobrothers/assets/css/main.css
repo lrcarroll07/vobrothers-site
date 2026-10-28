@@ -49,7 +49,8 @@
 
 /* "Family" color scheme: VO red for action, Quantum blue for supporting detail,
    Quantum's neutral black / grey in place of VO's cool charcoal. */
-.palette-family {
+.palette-family,
+.palette-quantum {
 	--accent: var(--q-blue);
 	--accent-dark: #1d5f8f;
 	--accent-text: #1f70a8;
@@ -64,6 +65,13 @@
 	--mist: #f2f2f2;
 	--line: #dedede;
 	--blue: var(--q-blue);
+}
+
+/* "Quantum" color scheme: the parent company's palette throughout. Quantum blue takes
+   over every red (buttons, CTA bands, badges, pins); only the logo artwork stays red. */
+.palette-quantum {
+	--red: var(--q-blue);
+	--red-dark: #1d5f8f;
 }
 
 /* Base ------------------------------------------------------------------- */
