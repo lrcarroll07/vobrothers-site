@@ -158,6 +158,10 @@ p { margin: 0 0 1em; }
 .topbar__emergency { color: var(--white) !important; }
 .topbar__emergency strong { color: var(--q-blue-bright); font-weight: 600; }
 .topbar__email:hover span { color: var(--q-blue-bright); }
+/* Original VO: top bar in VO colors (the Quantum logo itself stays as is). */
+.palette-vo .topbar { border-bottom-color: rgba(193, 39, 45, .45); }
+.palette-vo .topbar__contact .icon { color: var(--red); }
+.palette-vo .topbar__emergency strong, .palette-vo .topbar__email:hover span, .palette-vo .topbar__parent:hover .topbar__parent-word { color: var(--accent-light); }
 
 .site-header {
 	position: sticky; top: 0; z-index: 50; background: var(--charcoal);
