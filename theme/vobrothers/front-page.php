@@ -123,6 +123,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 </section>
 
 <section class="section section--dark industries" aria-labelledby="industries-title">
+	<?php echo vob_honeycomb( 'edge' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	<?php echo vob_honeycomb( 'right' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	<div class="container">
 		<div class="section-head">
@@ -168,6 +169,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 </section>
 
 <section class="section fab-band" aria-labelledby="fab-title">
+	<?php echo vob_honeycomb( 'edge' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	<?php
 	$fab_page = get_page_by_path( 'welding-fabrication', OBJECT, 'vob_service' );
 	if ( $fab_page && has_post_thumbnail( $fab_page ) ) {

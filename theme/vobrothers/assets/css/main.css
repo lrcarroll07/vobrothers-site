@@ -72,6 +72,10 @@
 .palette-quantum {
 	--red: var(--q-blue);
 	--red-dark: #1d5f8f;
+	/* Larger, bolder honeycomb and a glowing "digital floor", after quantumindustrial.com. */
+	--honeycomb-bold: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='31.18' height='54' viewBox='0 0 31.18 54'><path d='M0.00,-18.00 L15.59,-9.00 L15.59,9.00 L0.00,18.00 L-15.59,9.00 L-15.59,-9.00Z M31.18,-18.00 L46.77,-9.00 L46.77,9.00 L31.18,18.00 L15.59,9.00 L15.59,-9.00Z M15.59,9.00 L31.18,18.00 L31.18,36.00 L15.59,45.00 L0.00,36.00 L0.00,18.00Z M0.00,36.00 L15.59,45.00 L15.59,63.00 L0.00,72.00 L-15.59,63.00 L-15.59,45.00Z M31.18,36.00 L46.77,45.00 L46.77,63.00 L31.18,72.00 L15.59,63.00 L15.59,45.00Z' fill='none' stroke='%232ea3f2' stroke-width='1.3'/></svg>");
+	--honeycomb-glow: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='31.18' height='54' viewBox='0 0 31.18 54'><path d='M0.00,-18.00 L15.59,-9.00 L15.59,9.00 L0.00,18.00 L-15.59,9.00 L-15.59,-9.00Z M31.18,-18.00 L46.77,-9.00 L46.77,9.00 L31.18,18.00 L15.59,9.00 L15.59,-9.00Z M15.59,9.00 L31.18,18.00 L31.18,36.00 L15.59,45.00 L0.00,36.00 L0.00,18.00Z M0.00,36.00 L15.59,45.00 L15.59,63.00 L0.00,72.00 L-15.59,63.00 L-15.59,45.00Z M31.18,36.00 L46.77,45.00 L46.77,63.00 L31.18,72.00 L15.59,63.00 L15.59,45.00Z' fill='none' stroke='%2338c8ff' stroke-width='.9'/></svg>");
+	--hex-waves: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 140' preserveAspectRatio='none'><path d='M0,70 C150,30 300,110 450,70 S750,30 900,70 S1200,110 1200,70' fill='none' stroke='%2338c8ff' stroke-width='10' stroke-opacity='0.07'/><path d='M0,70 C150,30 300,110 450,70 S750,30 900,70 S1200,110 1200,70' fill='none' stroke='%2338c8ff' stroke-width='1.6' stroke-opacity='0.55'/><path d='M0,90 C200,50 350,130 600,80 S1000,40 1200,95' fill='none' stroke='%2338c8ff' stroke-width='10' stroke-opacity='0.07'/><path d='M0,90 C200,50 350,130 600,80 S1000,40 1200,95' fill='none' stroke='%2338c8ff' stroke-width='1.6' stroke-opacity='0.55'/><path d='M0,60 C250,100 420,20 700,65 S1050,105 1200,55' fill='none' stroke='%2338c8ff' stroke-width='10' stroke-opacity='0.07'/><path d='M0,60 C250,100 420,20 700,65 S1050,105 1200,55' fill='none' stroke='%2338c8ff' stroke-width='1.6' stroke-opacity='0.55'/></svg>");
 }
 
 /* Base ------------------------------------------------------------------- */
@@ -860,3 +864,39 @@ p { margin: 0 0 1em; }
 .palette-switch a { padding: 8px 10px; border-radius: 2px; color: var(--white); text-decoration: none; }
 .palette-switch a:hover { background: rgba(255,255,255,.1); color: var(--white); }
 .palette-switch a[aria-current] { background: var(--accent); }
+
+/* Full Quantum hexagon graphics (only in the "quantum" color scheme) ---------- */
+
+.honeycomb--edge { display: none; }
+.palette-quantum .honeycomb { background-image: var(--honeycomb-bold); background-size: 62.36px 108px; opacity: .4; }
+.palette-quantum .site-footer .honeycomb { opacity: .16; }
+
+/* Bright honeycomb along the bottom of dark bands that spills over into the next section,
+   fading out on both sides of the edge. Tiles anchor to the shared edge so they line up. */
+.palette-quantum .honeycomb--edge {
+	display: block; left: 0; right: 0; bottom: 0; height: 216px; width: auto; opacity: .75;
+	background-position: center bottom;
+	-webkit-mask-image: linear-gradient(to bottom, transparent, #000); mask-image: linear-gradient(to bottom, transparent, #000);
+}
+.palette-quantum :is(.page-hero, .industries, .fab-band) + .section { position: relative; isolation: isolate; }
+.palette-quantum :is(.page-hero, .industries, .fab-band) + .section::before {
+	content: ""; position: absolute; left: 0; right: 0; top: 0; height: 108px; z-index: -1; pointer-events: none;
+	background: var(--honeycomb-bold) center top / 62.36px 108px; opacity: .55;
+	-webkit-mask-image: linear-gradient(to bottom, #000, transparent); mask-image: linear-gradient(to bottom, #000, transparent);
+}
+
+/* Closing band as a glowing hexagon floor with light waves. */
+.palette-quantum .cta-band {
+	position: relative; isolation: isolate; overflow: hidden; padding: 72px 0 96px;
+	background: radial-gradient(120% 100% at 50% 115%, #0b7fd6 0%, #034b8c 32%, #01203f 65%, #000b17 100%);
+}
+.palette-quantum .cta-band::before {
+	content: ""; position: absolute; left: -60%; right: -60%; bottom: 0; height: 420%; z-index: -2; pointer-events: none;
+	background: var(--honeycomb-glow) center bottom / 62.36px 108px;
+	transform: perspective(420px) rotateX(66deg); transform-origin: 50% 100%;
+	-webkit-mask-image: linear-gradient(to top, #000 15%, transparent 60%); mask-image: linear-gradient(to top, #000 15%, transparent 60%);
+}
+.palette-quantum .cta-band::after {
+	content: ""; position: absolute; left: 0; right: 0; bottom: 4%; height: 70%; z-index: -1; pointer-events: none;
+	background: var(--hex-waves) center / 100% 100% no-repeat;
+}
