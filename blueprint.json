@@ -1,0 +1,20 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "VO Brothers Mechanical — website preview",
+		"author": "VO Brothers Mechanical"
+	},
+	"landingPage": "/",
+	"preferredVersions": { "php": "8.3", "wp": "latest" },
+	"steps": [
+		{
+			"step": "importWordPressFiles",
+			"wordPressFilesZip": { "resource": "url", "url": "https://raw.githubusercontent.com/lrcarroll07/vobrothers-site/playground-preview/vobrothers-playground.zip" }
+		},
+		{
+			"step": "updateUserMeta",
+			"userId": 1,
+			"meta": { "show_admin_bar_front": "false" }
+		}
+	]
+}
