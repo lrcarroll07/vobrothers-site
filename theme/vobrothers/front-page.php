@@ -26,6 +26,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 	}
 	?>
 	<?php echo vob_honeycomb( 'bottom' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+	<span class="hex-shards" aria-hidden="true"></span>
 	<div class="container hero__inner">
 		<p class="eyebrow eyebrow--light">Mechanical &middot; Process Piping &middot; Plumbing &middot; Service</p>
 		<h1 class="hero__title">We Build<br><span>People</span></h1>
