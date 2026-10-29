@@ -80,7 +80,7 @@ $jobs   = function_exists( 'vob_jobs' ) ? vob_jobs() : null;
 
 <section class="section" aria-labelledby="services-title">
 	<div class="container">
-		<div class="section-head section-head--cluster">
+		<div class="section-head<?php echo 'vo' === vob_palette() ? '' : ' section-head--cluster'; ?>">
 			<div>
 			<p class="eyebrow">What we do //</p>
 			<h2 class="section-title" id="services-title">Services</h2>

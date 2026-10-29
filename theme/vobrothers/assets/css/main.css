@@ -463,7 +463,7 @@ p { margin: 0 0 1em; }
 .prose { max-width: 100%; }
 .prose--page { max-width: 860px; }
 .prose h2 { font-size: 34px; text-transform: uppercase; margin-top: 1.4em; }
-.prose h2::after { content: ""; display: block; width: 56px; height: 4px; margin-top: 14px; background: var(--accent); }
+:is(.palette-family, .palette-quantum) .prose h2::after { content: ""; display: block; width: 56px; height: 4px; margin-top: 14px; background: var(--accent); }
 .prose h3 { font-size: 26px; margin-top: 1.2em; }
 .prose > :first-child { margin-top: 0; }
 .prose ul { padding-left: 1.2em; }
@@ -591,6 +591,14 @@ p { margin: 0 0 1em; }
 .map-pin svg { display: block; width: 100%; height: 100%; }
 .map-pin polygon { fill: var(--red); stroke: var(--white); stroke-width: 9; }
 .map-pin:hover { transform: scale(1.15); }
+.palette-vo .map-pin {
+	width: 22px; height: 22px; border-radius: 50%; background: var(--red); filter: none;
+	border: 3px solid var(--white); box-shadow: 0 0 0 6px rgba(193, 39, 45, .35), 0 4px 10px rgba(0,0,0,.4);
+}
+.palette-vo .map-pin--cluster {
+	width: 40px; height: 40px; display: grid; place-items: center; color: var(--white);
+	font: 700 18px var(--font-head); box-shadow: 0 0 0 8px rgba(193, 39, 45, .35), 0 4px 12px rgba(0,0,0,.45);
+}
 .map-pin--cluster b { position: absolute; inset: 0; display: grid; place-items: center; color: var(--white); font: 700 18px var(--font-head); }
 .project-map .leaflet-popup-content-wrapper { border-radius: var(--radius); padding: 0; overflow: hidden; }
 .project-map .leaflet-popup-content { margin: 0; }
@@ -731,22 +739,25 @@ p { margin: 0 0 1em; }
 .site-footer .honeycomb { opacity: .14; }
 
 /* Accent line under section headings, as on quantumindustrial.com (in VO red). */
-.section-title::after { content: ""; display: block; width: 72px; height: 4px; margin-top: 18px; background: var(--accent); }
+:is(.palette-family, .palette-quantum) .section-title::after { content: ""; display: block; width: 72px; height: 4px; margin-top: 18px; background: var(--accent); }
 
 /* Square, outlined buttons like Quantum's. */
-.btn, .icon-btn { border-radius: 0; }
-.icon-btn { clip-path: var(--hex); border: 0; background: var(--ink); color: var(--white); width: 48px; height: 54px; }
-.icon-btn:hover { background: var(--accent); }
+:is(.palette-family, .palette-quantum) .btn, :is(.palette-family, .palette-quantum) .icon-btn { border-radius: 0; }
+:is(.palette-family, .palette-quantum) .icon-btn { clip-path: var(--hex); border: 0; background: var(--ink); color: var(--white); width: 48px; height: 54px; }
+:is(.palette-family, .palette-quantum) .icon-btn:hover { background: var(--accent); }
 
 /* Hexagon icons. */
-.service-card__icon, .award-item__icon { border-radius: 0; clip-path: var(--hex); width: 52px; height: 60px; }
-.service-card:hover .service-card__icon { background: var(--accent); color: var(--white); }
-.award-item__icon { width: 44px; height: 50px; }
+:is(.palette-family, .palette-quantum) .service-card__icon, :is(.palette-family, .palette-quantum) .award-item__icon { border-radius: 0; clip-path: var(--hex); width: 52px; height: 60px; }
+:is(.palette-family, .palette-quantum) .service-card:hover .service-card__icon { background: var(--accent); color: var(--white); }
+:is(.palette-family, .palette-quantum) .award-item__icon { width: 44px; height: 50px; }
+
+/* Original VO: rectangular photo with a red corner bracket. */
+.palette-vo .split__media::after { content: ""; position: absolute; left: -16px; bottom: -16px; width: 40%; height: 40%; border-left: 6px solid var(--red); border-bottom: 6px solid var(--red); z-index: -1; }
 
 /* Single hexagon photo with a red offset outline (home Service & Maintenance). */
-.split__media { position: relative; isolation: isolate; width: 100%; max-width: 480px; justify-self: center; aspect-ratio: 1 / 1.1547; }
-.split__media img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; border-radius: 0; clip-path: var(--hex); }
-.split__media::after {
+:is(.palette-family, .palette-quantum) .split__media { position: relative; isolation: isolate; width: 100%; max-width: 480px; justify-self: center; aspect-ratio: 1 / 1.1547; }
+:is(.palette-family, .palette-quantum) .split__media img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; border-radius: 0; clip-path: var(--hex); }
+:is(.palette-family, .palette-quantum) .split__media::after {
 	content: ""; position: absolute; inset: 0; left: -22px; bottom: -22px; top: 22px; right: 22px; width: auto; height: auto; border: 0;
 	background: var(--hex-outline) center / contain no-repeat; z-index: -1;
 }
@@ -771,7 +782,7 @@ p { margin: 0 0 1em; }
 	.honeycomb--right { width: 70%; opacity: .22; }
 }
 @media (max-width: 640px) {
-	.split__media { max-width: 320px; }
+	:is(.palette-family, .palette-quantum) .split__media { max-width: 320px; }
 	.hex-cluster { max-width: 280px; }
 }
 

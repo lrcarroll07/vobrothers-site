@@ -43,9 +43,16 @@
 	const layer = L.layerGroup().addTo( map );
 	let visible = projects;
 
-	// Hexagon pins, matching the hexagon motif used across the site.
+	// Hexagon pins in the Quantum color schemes; round pins in the original VO scheme.
 	const HEX = '<svg viewBox="0 0 100 115.47" aria-hidden="true"><polygon points="50,4 96,30.5 96,85 50,111.5 4,85 4,30.5" /></svg>';
-	const pin = ( count ) => L.divIcon( {
+	const round = document.body.classList.contains( 'palette-vo' );
+	const pin = ( count ) => L.divIcon( round ? {
+		className: '',
+		html: count > 1 ? `<span class="map-pin map-pin--cluster">${ count }</span>` : '<span class="map-pin"></span>',
+		iconSize: count > 1 ? [ 40, 40 ] : [ 22, 22 ],
+		iconAnchor: count > 1 ? [ 20, 20 ] : [ 11, 11 ],
+		popupAnchor: [ 0, -12 ],
+	} : {
 		className: '',
 		html: count > 1 ? `<span class="map-pin map-pin--cluster">${ HEX }<b>${ count }</b></span>` : `<span class="map-pin">${ HEX }</span>`,
 		iconSize: count > 1 ? [ 42, 48 ] : [ 24, 28 ],

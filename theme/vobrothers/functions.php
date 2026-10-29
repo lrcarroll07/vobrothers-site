@@ -251,6 +251,9 @@ add_filter(
  * $modifiers: space-separated, e.g. 'right', 'bottom', 'right steel'.
  */
 function vob_honeycomb( $modifiers = 'right' ) {
+	if ( 'vo' === vob_palette() ) {
+		return ''; // The original VO scheme has no hexagon graphics.
+	}
 	$classes = array_map( fn( $m ) => 'honeycomb--' . sanitize_html_class( $m ), array_filter( explode( ' ', $modifiers ) ) );
 	return '<span class="honeycomb ' . esc_attr( implode( ' ', $classes ) ) . '" aria-hidden="true"></span>';
 }
@@ -259,6 +262,9 @@ function vob_honeycomb( $modifiers = 'right' ) {
  * Honeycomb cluster of up to five hexagon photos. Empty slots become red accent cells.
  */
 function vob_hex_cluster( $attachment_ids ) {
+	if ( 'vo' === vob_palette() ) {
+		return '';
+	}
 	$out = '<div class="hex-cluster" aria-hidden="true">';
 	for ( $i = 0; $i < 5; $i++ ) {
 		$id   = $attachment_ids[ $i ] ?? 0;
