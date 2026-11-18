@@ -58,6 +58,16 @@ The Projects page shows every project with coordinates on an interactive map (Le
 theme) over USGS shaded relief, which is public domain and needs no API key. The map follows the type
 and area filters; overlapping pins merge into a numbered bubble that zooms in, then lists its projects.
 
+## Shareable preview link (GitHub Pages)
+
+https://lrcarroll07.github.io/vobrothers-site/ — a static copy of every page, so it loads instantly
+on any device. Each color scheme has its own copy (`/`, `/slightly-quantum/`, `/full-quantum/`), and
+the Colors switch in the corner moves between them. Forms are turned off on this copy (they need
+WordPress to send).
+
+To update it after a change: `bin/serve.sh &` then `bin/publish-static.sh`, which saves the pages with
+`bin/static-export.py` and force-pushes them to the `gh-pages` branch. Live a minute or two later.
+
 ## Free preview in WordPress Playground
 
 `bin/playground-bundle.sh` (after `bin/setup.sh`) builds `dist/vobrothers-playground.zip`.

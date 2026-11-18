@@ -10,6 +10,10 @@ defined( 'ABSPATH' ) || exit;
 
 define( 'VOB_THEME_VERSION', '0.1.0' );
 
+// The site doesn't use WordPress's emoji script; skip it for a lighter page.
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
 add_action(
 	'after_setup_theme',
 	function () {
